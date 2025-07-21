@@ -1,7 +1,9 @@
 import { Transition } from "@headlessui/react";
-import { Enlace } from "../atomos/Enlace";
+import { LinkBoton } from "../atomos/LinkBoton.jsx";
 
 export function MenuEscondido({ isMenuOpen }) {
+  console.log("isMenuOpen:", isMenuOpen); // Verifica el estado del menú en la consola
+
   return (
     <Transition
       show={isMenuOpen} // La visibilidad se controla con el estado de React
@@ -16,11 +18,31 @@ export function MenuEscondido({ isMenuOpen }) {
     >
       <nav className="menu absolute w-1/2 h-screen top-0 right-0 bg-background-secondary-light dark:bg-background-secondary-dark">
         <ul className="flex bg-background-primary-light dark:bg-background-primary-dark  flex-col items-center justify-center h-full space-y-6 text-lg font-semibold">
-          <Enlace href="#hero">Inicio</Enlace>
-          <Enlace href="#proyectos">Proyectos</Enlace>
-          <Enlace href="#experiencia">Experiencia</Enlace>
-          <Enlace href="#sobreMi">Sobre mi</Enlace>
-          <Enlace href="#contacto">Contacto</Enlace>
+          <li>
+            <LinkBoton href="#hero" variant="ghost">
+              Inicio
+            </LinkBoton>
+          </li>
+          <li>
+            <LinkBoton href="#proyectos" variant="ghost">
+              Proyectos
+            </LinkBoton>
+          </li>
+          <li>
+            <LinkBoton href="#experiencia" variant="ghost">
+              Experiencia
+            </LinkBoton>
+          </li>
+          <li>
+            <LinkBoton href="#sobreMi" variant="ghost">
+              Sobre mí
+            </LinkBoton>
+          </li>
+          <li>
+            <LinkBoton href="#contacto" variant="ghost">
+              Contacto
+            </LinkBoton>
+          </li>
         </ul>
       </nav>
     </Transition>

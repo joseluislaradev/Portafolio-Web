@@ -31,6 +31,10 @@
   --color-accent-secondary-light: #e0aa63;
   --color-accent-secondary-dark: #a78bfa;
 
-  --color-hover-primary-light: #26352d;
+  --color-hover-primary-light: #2c4939;
   --color-hover-primary-dark: #1496d0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
