@@ -1,34 +1,23 @@
 import { LinkBoton } from "../atomos/LinkBoton";
 
-export function MenuComputadora() {
+export function MenuComputadora({ sectionRefs, sectionIds, activeSection }) {
+  console.log("MenuComputadora activeSection:", activeSection);
   return (
     <nav>
       <ul className="flex items-center gap-6 text-lg font-semibold">
-        <li>
-          <LinkBoton href="#hero" variant="ghost">
-            Inicio
-          </LinkBoton>
-        </li>
-        <li>
-          <LinkBoton href="#proyectos" variant="ghost">
-            Proyectos
-          </LinkBoton>
-        </li>
-        <li>
-          <LinkBoton href="#experiencia" variant="ghost">
-            Experiencia
-          </LinkBoton>
-        </li>
-        <li>
-          <LinkBoton href="#sobreMi" variant="ghost">
-            Sobre mí
-          </LinkBoton>
-        </li>
-        <li>
-          <LinkBoton href="#contacto" variant="ghost">
-            Contacto
-          </LinkBoton>
-        </li>
+
+        {sectionIds.map((sectionId) => (
+          <li key={sectionId}>
+            <LinkBoton
+              href={`#${sectionId}`}
+              variant="ghost"
+              className={activeSection === sectionId ? "text-accent-secondary-light dark:text-accent-secondary-dark" : ""}
+              sectionRefs={sectionRefs}
+            >
+              {sectionId}
+            </LinkBoton>
+          </li>
+        ))}
       </ul>
     </nav>
   );

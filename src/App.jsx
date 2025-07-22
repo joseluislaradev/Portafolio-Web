@@ -24,7 +24,7 @@ export function App() {
         sectionIds={sectionIds}
         activeSection={activeSection}
       />
-      <main>
+      <main className="pt-16">
         <div ref={sectionRefs.hero}>
           <Hero />
         </div>

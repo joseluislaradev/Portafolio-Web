@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center gap-8 md:gap-12 justify-center h-screen bg-background-primary-light dark:bg-background-primary-dark text-center"
+      className="flex flex-col items-center gap-8 md:gap-12 justify-center min-h-[calc(100vh-4rem)] bg-background-primary-light dark:bg-background-primary-dark text-center p-4"
     >
       <figure>
         <img

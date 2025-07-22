@@ -22,7 +22,7 @@ export function Header({ sectionRefs, sectionIds, activeSection }) {
 
         {!isMobile && (
           <div className="absolute top-4 right-4 z-10">
-            <MenuComputadora />
+            <MenuComputadora sectionRefs={sectionRefs} sectionIds={sectionIds} activeSection={activeSection} />
           </div>
         )}
 
@@ -39,7 +39,7 @@ export function Header({ sectionRefs, sectionIds, activeSection }) {
           </div>
         )}
 
-        {isMobile && <MenuEscondido isMenuOpen={isMenuOpen} />}
+        {isMobile && <MenuEscondido sectionRefs={sectionRefs} sectionIds={sectionIds} activeSection={activeSection} isMenuOpen={isMenuOpen} />}
       </div>
     </header>
   );

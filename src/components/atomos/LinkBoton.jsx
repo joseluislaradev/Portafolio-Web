@@ -6,16 +6,28 @@ export function LinkBoton({
   children,
   variant = "primary",
   className = "",
+  sectionRefs,
   ...rest
 }) {
   const isInternalLink = href && href.startsWith("/");
-  const isSeccionPage = href && (href.startsWith("#") || href.startsWith("/#"));
+  const isAnchorLink = href && (href.startsWith("#") || href.startsWith("/#"));
 
   const combinedClassName = `${buttonBaseStyles} ${buttonVariantStyles[variant]} ${className}`;
 
-  if (isSeccionPage) {
+  if (isAnchorLink) {
+    const handleAnchorClick = (event) => {
+      event.preventDefault();
+      const targetId = href.substring(1); 
+      
+      const targetElement = sectionRefs[targetId]?.current;
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    
     return (
-      <a href={href} className={combinedClassName} {...rest}>
+      <a href={href} className={combinedClassName} onClick={handleAnchorClick} {...rest}>
         {children}
       </a>
     );
