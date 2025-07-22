@@ -1,16 +1,14 @@
-import { Boton } from "../atomos/Boton.jsx";
-import { LinkBoton } from "../atomos/LinkBoton.jsx";
-import sprite from "../../assets/iconos/sprite.svg";
+import { LinkBoton } from "../moleculas/LinkBoton.jsx";
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center gap-8 md:gap-12 justify-center min-h-[calc(100vh-4rem)] bg-background-primary-light dark:bg-background-primary-dark text-center p-4"
+      className="flex flex-col items-center gap-8 md:gap-12 justify-center min-h-[calc(100vh-4rem)] bg-gradient-to-b from-background-primary-light via-50% to-background-secondary-light dark:from-background-primary-dark  dark:via-50%  dark:to-background-secondary-dark text-center p-4"
     >
       <figure>
         <img
-          src="/src/assets/images/fotoPerfil.png"
+          src="/src/assets/images/fotoPerfil.webp"
           alt="Foto de perfil"
           className="rounded-full w-50 h-50 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg "
         />
@@ -24,15 +22,13 @@ export function Hero() {
       </div>
 
       <nav>
-        <ul class="flex gap-4 md:gap-6 lg:gap-8">
+        <ul className="flex gap-4 md:gap-6 lg:gap-8">
           <li>
             <LinkBoton
               href="https://www.linkedin.com/in/joseluislaradev"
               variant="primary"
+              iconName="linkedin"
             >
-              <svg width="24" height="24" fill="white">
-                <use xlinkHref={`${sprite}#linkedin`} />
-              </svg>
               Linkedin
             </LinkBoton>
           </li>
@@ -40,10 +36,8 @@ export function Hero() {
             <LinkBoton
               href="https://github.com/joseluislaradev"
               variant="primary"
+              iconName="github"
             >
-              <svg width="24" height="24" fill="white">
-                <use xlinkHref={`${sprite}#github`} />
-              </svg>
               Github
             </LinkBoton>
           </li>

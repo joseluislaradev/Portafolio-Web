@@ -1,9 +1,9 @@
 // src/hooks/useScrollSpy.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 // El hook ahora recibe el objeto de refs
-export function useScrollSpy( sectionRefs ) {
-  const [activeSection, setActiveSection] = useState('');
+export function useScrollSpy(sectionRefs) {
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,20 +15,23 @@ export function useScrollSpy( sectionRefs ) {
           }
         }
       },
-      { rootMargin: '-50% 0px -50% 0px' }
+      {
+        threshold: 0.3, // Activa cuando el 30% de la sección es visible
+        rootMargin: "-10% 0px -50% 0px", // Ajusta el área de detección
+      }
     );
 
     // Creamos un array con los elementos del DOM a partir de los refs
     const elements = Object.values(sectionRefs)
-      .map(ref => ref.current)
+      .map((ref) => ref.current)
       .filter(Boolean); // Filtramos por si algún ref es nulo
 
     // Le decimos al observer que vigile esos elementos
-    elements.forEach(element => observer.observe(element));
+    elements.forEach((element) => observer.observe(element));
 
     // La función de limpieza
     return () => {
-      elements.forEach(element => observer.unobserve(element));
+      elements.forEach((element) => observer.unobserve(element));
     };
   }, [sectionRefs]); // La dependencia ahora es el objeto de refs
 

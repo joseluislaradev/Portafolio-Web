@@ -3,8 +3,9 @@ import { MenuEscondido } from "../moleculas/MenuEscondido";
 import { useState } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { MenuComputadora } from "../moleculas/MenuComputadora.jsx";
+import { MenuIcon } from "../atomos/MenuIcon.jsx";
 
-export function Header({ sectionRefs, sectionIds, activeSection }) {
+export function Header({ sections, sectionRefs, activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isMobile = useMediaQuery("(max-width: 768px)"); // Cambia el valor según tu diseño
@@ -22,7 +23,11 @@ export function Header({ sectionRefs, sectionIds, activeSection }) {
 
         {!isMobile && (
           <div className="absolute top-4 right-4 z-10">
-            <MenuComputadora sectionRefs={sectionRefs} sectionIds={sectionIds} activeSection={activeSection} />
+            <MenuComputadora
+              sections={sections}
+              sectionRefs={sectionRefs}
+              activeSection={activeSection}
+            />
           </div>
         )}
 
@@ -34,12 +39,19 @@ export function Header({ sectionRefs, sectionIds, activeSection }) {
               className=" rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200" // Estilos para el área clickeable
               aria-label="Abrir menú"
             >
-              <span className="material-symbols-outlined ">menu</span>
+              <MenuIcon isOpen={isMenuOpen} />
             </button>
           </div>
         )}
 
-        {isMobile && <MenuEscondido sectionRefs={sectionRefs} sectionIds={sectionIds} activeSection={activeSection} isMenuOpen={isMenuOpen} />}
+        {isMobile && (
+          <MenuEscondido
+            sections={sections}
+            sectionRefs={sectionRefs}
+            activeSection={activeSection}
+            isMenuOpen={isMenuOpen}
+          />
+        )}
       </div>
     </header>
   );

@@ -1,23 +1,14 @@
-import { LinkBoton } from "../atomos/LinkBoton";
+import { NavLinks } from "./NavLinks.jsx";
 
-export function MenuComputadora({ sectionRefs, sectionIds, activeSection }) {
-  console.log("MenuComputadora activeSection:", activeSection);
+export function MenuComputadora({ sections, activeSection, sectionRefs }) {
   return (
     <nav>
       <ul className="flex items-center gap-6 text-lg font-semibold">
-
-        {sectionIds.map((sectionId) => (
-          <li key={sectionId}>
-            <LinkBoton
-              href={`#${sectionId}`}
-              variant="ghost"
-              className={activeSection === sectionId ? "text-accent-secondary-light dark:text-accent-secondary-dark" : ""}
-              sectionRefs={sectionRefs}
-            >
-              {sectionId}
-            </LinkBoton>
-          </li>
-        ))}
+        <NavLinks
+          sections={sections}
+          activeSection={activeSection}
+          sectionRefs={sectionRefs}
+        />
       </ul>
     </nav>
   );
