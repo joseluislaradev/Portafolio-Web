@@ -1,0 +1,96 @@
+import { LinkBoton } from "./components/moleculas/LinkBoton"; // Ajusta la ruta a tus componentes
+import { ThemeSwitcher } from "./components/atomos/SwitchTema";
+
+export function AppPaginaConstruccion() {
+  return (
+    // Contenedor principal con tus colores de tema
+    <main className="w-full min-h-screen bg-white dark:bg-gray-700 flex items-center justify-center p-4 sm:p-6 md:p-8">
+
+      {/* Botón para cambiar tema en la esquina */}
+      <div className="absolute top-5 right-5">
+        <ThemeSwitcher />
+      </div>
+
+      {/* Tarjeta de contenido centrada */}
+      <div className="relative top-10 max-w-2xl w-full text-center bg-gray-200 dark:bg-background-primary-dark p-8 rounded-2xl shadow-lg">
+
+        <h1 className="text-3xl md:text-5xl font-bold ">
+          José Luis Lara
+        </h1>
+
+        <p className="text-lg md:text-xl mt-2">
+          Ingeniero de Software
+        </p>
+        
+        <p className="mt-6 text-base md:text-lg">
+          ¡Hola! Estás viendo mi portafolio digital en plena construcción. Este sitio es un proyecto vivo y un reflejo transparente de mi proceso, donde estoy traduciendo activamente mi diseño de Figma a código limpio con React y Tailwind CSS.
+        </p>
+
+        <div className="w-1/4 h-px mx-auto my-8"></div>
+
+        {/* Sección de Diseño */}
+        <div>
+          <h2 className="text-2xl font-bold  mb-3">Fase de Diseño</h2>
+          <p>
+            La experiencia de usuario (UI/UX) fue diseñada en Figma, enfocada en una interfaz moderna y responsiva.
+          </p>
+          <div className="mt-4 flex justify-center">
+            <LinkBoton
+              href="https://www.figma.com/proto/sljaSp7lyFJxOxLnXAEh2Y/Portafolio-web?node-id=68-217&t=S8aGzGQzGAGGlCxx-1"
+              variant="primary"
+              iconName="figma" // Asume que tienes un ícono de figma en tu sprite
+              className="!text-sm !md:text-base !lg:text-xl"
+            >
+              Ver Prototipo en Figma
+            </LinkBoton>
+          </div>
+        </div>
+
+        <div className="w-1/4 h-px my-8"></div>
+
+        {/* Sección de Desarrollo */}
+        <div>
+          <h2 className="text-2xl font-bold mb-3">Fase de Desarrollo (En Progreso)</h2>
+          <p>
+            Puedes seguir la construcción de este sitio en tiempo real en su repositorio público.
+          </p>
+          <div className="mt-4 flex justify-center">
+            <LinkBoton
+              href="https://github.com/joseluislaradev/Portafolio-Web"
+              variant="primary"
+              iconName="github"
+              className="!text-sm !md:text-base !lg:text-xl"
+
+            >
+              Seguir en GitHub
+            </LinkBoton>
+          </div>
+        </div>
+
+        <div className="w-1/4 h-px mx-auto my-8"></div>
+        
+        {/* Call to Action Final */}
+        <div>
+           <h2 className="text-2xl font-bold mb-3">Mientras tanto, conectemos.</h2>
+           <div className="flex justify-center gap-4 mt-4">
+            <LinkBoton
+                href="https://www.linkedin.com/in/joseluislaradev"
+                variant="primary"
+                iconName="linkedin"
+              >
+                LinkedIn
+              </LinkBoton>
+              <LinkBoton
+                href="mailto:hola@joseluislara.dev"
+                variant="primary"
+                iconName="forward-email" // Asume que tienes un ícono de correo
+              >
+                Envíame un correo
+              </LinkBoton>
+           </div>
+        </div>
+
+      </div>
+    </main>
+  );
+}

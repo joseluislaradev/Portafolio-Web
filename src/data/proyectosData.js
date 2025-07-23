@@ -1,19 +1,19 @@
 export const proyectosData = [
   {
     id: 1,
-    titulo: "Proyecto SINUTACyD",
+    titulo: "Sinut ACyD",
     descripcion:
-      "Plataforma de gestión de actividades culturales y deportivas, utilizada por toda una comunidad universitaria.",
+      "Sinut ACyD es una plataforma web que centraliza y simplifica la gestión de actividades culturales y deportivas para toda una comunidad universitaria. Sinut ACyD optimiza la inscripción, seguimiento y registro de eventos para estudiantes, profesores y administrativos.",
     imageUrl: "/src/assets/images/proyectoSINUTACyD.webp",
     detailsLink: "/proyectos/sinutacyd", // 👈 Solo este proyecto tiene enlace de detalles
   },
-  {
+  { 
     id: 2,
     titulo: "K-9 Dispenser",
     descripcion:
-      "Un sistema web y de hardware conectado (IoT) para la dispensación automática de comida para mascotas.",
-    imageUrl: "/src/assets/images/k9dispenser.webp",
-    liveLink: "https://demo-k9.com", // 👈 Este tiene demo y código
-    codeLink: "https://github.com/user/k9-dispenser",
+      "Un proyecto full-stack de 'Internet de las Cosas' (IoT) que fusiona hardware y software para la alimentación automatizada de mascotas. K-9 Dispenser combina un dispositivo físico controlado por ESP8266 con una plataforma web para ofrecer control total de forma remota.",
+    imageUrl: "/src/assets/images/proyectoK-9Dispenser.webp",
+    liveLink: "https://k9dispenser.infy.uk/", // 👈 Este tiene demo y código
+    codeLink: "https://github.com/joseluislaradev/K-9-dispenser",
   },
 ];
