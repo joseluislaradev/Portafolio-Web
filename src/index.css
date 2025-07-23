@@ -20,7 +20,7 @@
   --color-text-primary-dark: #f1f5f9;
   --color-text-secondary-light: #334155;
   --color-text-secondary-dark: #e5e7eb;
-  --color-text-subtitle-light: #64748b;
+  --color-text-subtitle-light: #7185a1;
   --color-text-subtitle-dark: #9ca3af;
 
   --color-text-button-light: #ffffff;
@@ -33,4 +33,6 @@
 
   --color-hover-primary-light: #2c4939;
   --color-hover-primary-dark: #1496d0;
+  --color-hover-secondary-light: #c8944f; /* Un dorado un poco más oscuro */
+  --color-hover-secondary-dark: #8b72d7; /* Un violeta un poco más oscuro */
 }

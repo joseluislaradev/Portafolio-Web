@@ -7,7 +7,7 @@ import { AppPaginaConstruccion } from "./AppPaginaConstruccion.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <AppPaginaConstruccion />
+      <App />
     </BrowserRouter>
   </StrictMode>
 );

@@ -28,6 +28,7 @@ export function Hero() {
               href="https://www.linkedin.com/in/joseluislaradev"
               variant="primary"
               iconName="linkedin"
+              className="text-lg md:text-xl lg:text-2xl"
             >
               Linkedin
             </LinkBoton>
@@ -37,6 +38,7 @@ export function Hero() {
               href="https://github.com/joseluislaradev"
               variant="primary"
               iconName="github"
+              className="text-lg md:text-xl lg:text-2xl"
             >
               Github
             </LinkBoton>

@@ -2,6 +2,7 @@ import { Component, useRef } from "react";
 import { Header } from "./components/organismos/Header";
 import { Hero } from "./components/organismos/Hero";
 import { Proyectos } from "./components/organismos/Proyectos.jsx";
+import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.jsx";
 import { useScrollSpy } from "./hooks/useScrollSpy";
 
 export function App() {
@@ -17,7 +18,7 @@ export function App() {
       id: "experiencia",
       label: "Experiencia",
       ref: useRef(null),
-      Component: null,
+      Component: ExperienciaLaboral,
     },
     {
       id: "sobreMi",
@@ -41,7 +42,7 @@ export function App() {
   const activeSection = useScrollSpy(sectionRefs);
 
   return (
-    <>
+    <div className="">
       <Header
         sections={sections}
         sectionRefs={sectionRefs}
@@ -54,6 +55,6 @@ export function App() {
           </div>
         ))}
       </main>
-    </>
+    </div>
   );
 }
