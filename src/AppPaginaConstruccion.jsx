@@ -4,7 +4,7 @@ import { ThemeSwitcher } from "./components/atomos/SwitchTema";
 export function AppPaginaConstruccion() {
   return (
     // Contenedor principal con tus colores de tema
-    <main className="w-full min-h-screen bg-white dark:bg-gray-700 flex items-center justify-center p-4 sm:p-6 md:p-8">
+    <main className="w-full min-h-screen bg-white dark:bg-gray-700 flex items-center justify-center sm:p-6 md:p-8">
 
       {/* Botón para cambiar tema en la esquina */}
       <div className="absolute top-5 right-5">
@@ -12,7 +12,7 @@ export function AppPaginaConstruccion() {
       </div>
 
       {/* Tarjeta de contenido centrada */}
-      <div className="relative top-10 max-w-2xl w-full text-center bg-gray-200 dark:bg-background-primary-dark p-8 rounded-2xl shadow-lg">
+      <div className="relative mt-14 max-w-2xl w-full text-center bg-gray-200 dark:bg-background-primary-dark p-8 rounded-2xl shadow-lg">
 
         <h1 className="text-3xl md:text-5xl font-bold ">
           José Luis Lara
@@ -72,7 +72,7 @@ export function AppPaginaConstruccion() {
         {/* Call to Action Final */}
         <div>
            <h2 className="text-2xl font-bold mb-3">Mientras tanto, conectemos.</h2>
-           <div className="flex justify-center gap-4 mt-4">
+           <div className="flex justify-center gap-4 mt-4 flex-wrap">
             <LinkBoton
                 href="https://www.linkedin.com/in/joseluislaradev"
                 variant="primary"
