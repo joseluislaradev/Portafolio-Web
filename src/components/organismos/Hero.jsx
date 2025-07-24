@@ -1,4 +1,5 @@
 import { LinkBoton } from "../moleculas/LinkBoton.jsx";
+import { BotonDescarga } from "../moleculas/BotonDescarga.jsx";
 
 export function Hero() {
   return (
@@ -34,14 +35,15 @@ export function Hero() {
             </LinkBoton>
           </li>
           <li>
-            <LinkBoton
-              href="https://github.com/joseluislaradev"
+            <BotonDescarga
+              href="/CV_José_Luis_Lara.pdf"
               variant="primary"
-              iconName="github"
+              iconName="download"
               className="text-lg md:text-xl lg:text-2xl"
+              download
             >
-              Github
-            </LinkBoton>
+              Descargar CV
+            </BotonDescarga>
           </li>
         </ul>
       </nav>
