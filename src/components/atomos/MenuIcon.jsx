@@ -3,7 +3,7 @@ export function MenuIcon({ isOpen }) {
     "h-0.5 w-6 bg-current transition-all duration-300 ease-in-out";
 
   return (
-    <div className="relative h-6 w-6">
+    <div className="relative h-6 w-6 flex flex-col justify-between">
       {/* Línea Superior */}
       <span
         className={`

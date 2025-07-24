@@ -1,9 +1,6 @@
-// En tu componente, por ejemplo src/components/ThemeSwitcher.jsx
-
 import { useState, useEffect } from "react";
-import { ToggleSwitch } from "flowbite-react";
 
-export function ThemeSwitcher() {
+export function useSwitchTema() {
   // Estado para saber si el modo oscuro está activado o no
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
@@ -32,11 +29,8 @@ export function ThemeSwitcher() {
     }
   }, [isDarkMode]);
 
-  return (
-    <ToggleSwitch
-      checked={isDarkMode}
-      label={isDarkMode ? "Modo Oscuro" : "Modo Claro"}
-      onChange={handleThemeToggle}
-    />
-  );
+  return {
+    isDarkMode,
+    handleThemeToggle,
+  };
 }
