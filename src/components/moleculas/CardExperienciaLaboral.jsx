@@ -24,7 +24,7 @@ export function CardExperienciaLaboral({
             {fecha}
           </p>
         </div>
-        <div className="w-full pb-16 md:pb-20 lg:pb-24">
+        <div className="w-full pb-20 md:pb-24 lg:pb-28">
           <p className="text-base text-text-primary-light dark:text-text-primary-dark">
             {descripcion}
           </p>

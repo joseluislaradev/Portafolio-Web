@@ -10,5 +10,15 @@ export const normalizar = (nombre) => {
   if (nombre === "Django") return "django";
   if (nombre === "PHP") return "php";
   if (nombre === "MySQL") return "mysql";
+  if (nombre === "PostgreSQL") return "postgresql";
+  if (nombre === "SQLite") return "sqlite";
+  if (nombre === "Tailwind CSS") return "tailwindcss";
+  if (nombre === "React") return "react";
+  if (nombre === "ASP.NET Core") return "aspnetcore";
+  if (nombre === "Docker") return "docker";
+  if (nombre === "Figma") return "figma";
+  if (nombre === "Jira") return "jira";
+  if (nombre === "Slack") return "slack";
+  if (nombre === "Notion") return "notion";
   return nombre.toLowerCase().replace(/\s+/g, "-");
 };
