@@ -18,12 +18,12 @@ export function Header({ sections, sectionRefs, activeSection }) {
     <header className="w-full fixed bg-background-primary-light dark:bg-background-primary-dark z-50 h-16 select-none ">
       <div w-full className="max-w-[1900px] mx-auto">
         <div className="flex justify-between items-center w-full relative">
-          <div className="absolute left-4 top-3">
+          <div className="absolute left-4 top-3 animate-slide-in-top">
             <ThemeSwitcher />
           </div>
 
           {!isMobile && (
-            <div className="absolute top-4 right-4 z-10">
+            <div className="absolute top-4 right-4 z-10 animate-slide-in-top">
               <MenuComputadora
                 sections={sections}
                 sectionRefs={sectionRefs}

@@ -16,9 +16,9 @@ export function PiePagina() {
           className="!text-sm md:!text-base lg:!text-lg !font-normal"
         >
           {" "}
-          Desarrollado con React y Tailwind CSS
+          Diseñado con Figma. Desarrollado con React y Tailwind CSS
         </LinkBoton>
-        <p
+        <div
           className="text-center text-xs md:text-sm lg:text-base text-text-secondary
             -light dark:text-text-secondary-dark"
         >
@@ -40,7 +40,7 @@ export function PiePagina() {
               />
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </footer>
   );

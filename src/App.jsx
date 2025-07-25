@@ -61,7 +61,6 @@ export function App() {
       </main>
       <PiePagina />
 
-      {/* 👇 Añade este componente aquí. Se encargará de mostrar los toasts */}
       <Toaster
         position="top-center"
         toastOptions={{
