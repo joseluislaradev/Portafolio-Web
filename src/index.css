@@ -11,32 +11,48 @@
 @theme {
   --font-poppins: "Poppins", sans-serif;
 
-  --color-background-primary-light: #f5f5f5;
+  /* Modo Claro*/
+  --color-background-primary-light: #f8f9fa; /* Un blanco ligeramente apagado, muy limpio */
+  --color-background-secondary-light: #ffffff; /* Blanco puro para tarjetas y secciones alternas */
+
+  --color-text-primary-light: #111827; /* Gris muy oscuro (casi negro) para titulares */
+  --color-text-secondary-light: #374151; /* Gris oscuro para párrafos */
+  --color-text-subtitle-light: #6b7280; /* Gris intermedio para texto sutil */
+
+  --color-text-button-light: #ffffff; /* Texto de botones primarios siempre blanco */
+  --color-text-button-outline-light: #3b82f6; /* Texto para botones outline */
+
+  --color-accent-primary-light: #3b82f6; /* TU AZUL: El protagonista */
+  --color-accent-secondary-light: #10b981; /* Un verde esmeralda como acento secundario vibrante */
+
+  --color-hover-primary-light: #2563eb; /* Un azul un poco más oscuro para el hover */
+  --color-hover-secondary-light: #0b7451; /* Un verde más oscuro para el hover */
+
+  --text-shadow-light: 2px 2px 5px var(--color-accent-primary-light);
+
+  /* Modo oscuro*/
   --color-background-primary-dark: #111827;
-  --color-background-secondary-light: #ffffff;
   --color-background-secondary-dark: #1e293b;
 
-  --color-text-primary-light: #222725;
   --color-text-primary-dark: #f1f5f9;
-  --color-text-secondary-light: #334155;
   --color-text-secondary-dark: #e5e7eb;
-  --color-text-subtitle-light: #7185a1;
   --color-text-subtitle-dark: #9ca3af;
 
-  --color-text-button-light: #ffffff;
   --color-text-button-dark: #f1f5f9;
+  --color-text-button-outline-dark: #f1f5f9;
 
-  --color-accent-primary-light: #2a3d33;
   --color-accent-primary-dark: #38bdf8;
-  --color-accent-secondary-light: #e0aa63;
   --color-accent-secondary-dark: #a78bfa;
 
-  --color-hover-primary-light: #2c4939;
   --color-hover-primary-dark: #1496d0;
-  --color-hover-secondary-light: #c8944f; /* Un dorado un poco más oscuro */
-  --color-hover-secondary-dark: #8b72d7; /* Un violeta un poco más oscuro */
+  --color-hover-secondary-dark: #8b72d7;
+
+  --text-shadow-dark: 0 0 8px var(--color-accent-primary-dark);
 }
 
-button, a, link, img{
+button,
+a,
+link,
+img {
   user-select: none;
 }

@@ -27,7 +27,7 @@ export function Hero() {
           <li>
             <LinkBoton
               href="https://www.linkedin.com/in/joseluislaradev"
-              variant="primary"
+              variant="outline"
               iconName="linkedin"
               className="text-lg md:text-xl lg:text-2xl"
             >

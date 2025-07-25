@@ -9,7 +9,7 @@ export function Contacto() {
     >
       <div className="max-w-6xl mx-auto ">
         <div className="mt-20 md:mt-24 lg:28 flex flex-col items-center gap-12 md:gap-16 lg:gap-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-shadow-lg/60 text-shadow-accent-secondary-light ">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-shadow-lg/60 text-shadow-[var(--text-shadow-light)] dark:text-shadow-[var(--text-shadow-dark)]">
             ¡ATERRICEMOS TU PROXIMO PROYECTO!
           </h2>
           <p className="text-center text-lg md:text-xl lg:text-2xl ">
