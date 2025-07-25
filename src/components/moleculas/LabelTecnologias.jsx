@@ -4,7 +4,7 @@ import { tecnologiasData } from "../../constantes/tecnologias.js";
 
 export function LabelTecnologias({ tecnologias }) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 select-none">
       {tecnologias.map((nombreTecnologia) => {
         const idIcono = normalizar(nombreTecnologia);
 

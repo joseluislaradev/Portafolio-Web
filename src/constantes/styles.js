@@ -12,4 +12,6 @@ export const buttonVariantStyles = {
     "text-sm md:text-base lg:text-lg text-text-primary-light dark:text-text-primary-dark hover:text-accent-secondary-light  dark:hover:text-accent-secondary-dark transition-colors duration-200",
   ghostSecondary:
     "text-lg md:text-xl lg:text-2lg text-text-primary-light dark:text-text-primary-dark hover:text-accent-primary-light dark:hover:text-accent-primary-dark transition-colors duration-200",
+  circle:
+    "w-12 h-12 flex items-center justify-center rounded-full bg-accent-primary-light dark:bg-accent-primary-dark text-text-button-light dark:text-text-button-dark hover:bg-hover-primary-light dark:hover:bg-hover-primary-dark transition-colors duration-200",
 };

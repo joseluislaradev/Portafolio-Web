@@ -36,3 +36,7 @@
   --color-hover-secondary-light: #c8944f; /* Un dorado un poco más oscuro */
   --color-hover-secondary-dark: #8b72d7; /* Un violeta un poco más oscuro */
 }
+
+button, a, link, img{
+  user-select: none;
+}

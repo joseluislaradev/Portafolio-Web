@@ -17,62 +17,64 @@ export function Header({ sections, sectionRefs, activeSection }) {
   };
 
   return (
-    <header className="w-full fixed bg-background-primary-light dark:bg-background-primary-dark z-50 h-16 ">
-      <div className="flex justify-between items-center w-full relative">
-        <div className="absolute left-4 top-3">
-          <button
-            type="button"
-            onClick={() => handleThemeToggle(!isDarkMode)}
-            className="rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200"
-            aria-label="Cambiar tema"
-          >
-            <div className="rounded-full p-2 box-border bg-background-secondary-light dark:bg-background-secondary-dark group">
-              {isDarkMode ? (
-                <Icono
-                  nombre="dark-mode"
-                  className="group-hover:text-accent-secondary-dark"
-                />
-              ) : (
-                <Icono
-                  nombre="light-mode"
-                  className="group-hover:text-accent-secondary-light"
-                />
-              )}
-            </div>
-          </button>
-        </div>
+    <header className="w-full fixed bg-background-primary-light dark:bg-background-primary-dark z-50 h-16 select-none ">
+      <div w-full className="max-w-[1900px] mx-auto">
+        <div className="flex justify-between items-center w-full relative">
+          <div className="absolute left-4 top-3">
+            <button
+              type="button"
+              onClick={() => handleThemeToggle(!isDarkMode)}
+              className="rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200"
+              aria-label="Cambiar tema"
+            >
+              <div className="rounded-full p-2 box-border bg-background-secondary-light dark:bg-background-secondary-dark group">
+                {isDarkMode ? (
+                  <Icono
+                    nombre="dark-mode"
+                    className="group-hover:text-accent-secondary-dark"
+                  />
+                ) : (
+                  <Icono
+                    nombre="light-mode"
+                    className="group-hover:text-accent-secondary-light"
+                  />
+                )}
+              </div>
+            </button>
+          </div>
 
-        {!isMobile && (
-          <div className="absolute top-4 right-4 z-10">
-            <MenuComputadora
+          {!isMobile && (
+            <div className="absolute top-4 right-4 z-10">
+              <MenuComputadora
+                sections={sections}
+                sectionRefs={sectionRefs}
+                activeSection={activeSection}
+              />
+            </div>
+          )}
+
+          {isMobile && (
+            <div className="absolute top-4 right-4 z-10">
+              <button
+                type="button"
+                onClick={toggleMenu}
+                className=" rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200" // Estilos para el área clickeable
+                aria-label="Abrir menú"
+              >
+                <MenuIcon isOpen={isMenuOpen} />
+              </button>
+            </div>
+          )}
+
+          {isMobile && (
+            <MenuEscondido
               sections={sections}
               sectionRefs={sectionRefs}
               activeSection={activeSection}
+              isMenuOpen={isMenuOpen}
             />
-          </div>
-        )}
-
-        {isMobile && (
-          <div className="absolute top-4 right-4 z-10">
-            <button
-              type="button"
-              onClick={toggleMenu}
-              className=" rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200" // Estilos para el área clickeable
-              aria-label="Abrir menú"
-            >
-              <MenuIcon isOpen={isMenuOpen} />
-            </button>
-          </div>
-        )}
-
-        {isMobile && (
-          <MenuEscondido
-            sections={sections}
-            sectionRefs={sectionRefs}
-            activeSection={activeSection}
-            isMenuOpen={isMenuOpen}
-          />
-        )}
+          )}
+        </div>
       </div>
     </header>
   );
