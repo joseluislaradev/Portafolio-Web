@@ -10,4 +10,6 @@ export const buttonVariantStyles = {
     "flex items-center justify-center gap-4 bg-accent-secondary-light text-text-primary-light hover:bg-[--color-hover-secondary-light] dark:bg-accent-secondary-dark dark:text-text-primary-dark dark:hover:bg-[--color-hover-secondary-dark] hover:scale-105 transition-transform duration-200",
   ghost:
     "text-sm md:text-base lg:text-lg text-text-primary-light dark:text-text-primary-dark hover:text-accent-secondary-light  dark:hover:text-accent-secondary-dark transition-colors duration-200",
+  ghostSecondary:
+    "text-lg md:text-xl lg:text-2lg text-text-primary-light dark:text-text-primary-dark hover:text-accent-primary-light dark:hover:text-accent-primary-dark transition-colors duration-200",
 };

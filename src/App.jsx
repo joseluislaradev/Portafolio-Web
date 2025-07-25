@@ -1,10 +1,10 @@
 import { Component, useRef } from "react";
-import { useScrollSpy } from "./hooks/useScrollSpy";
 import { Header } from "./components/organismos/Header";
 import { Hero } from "./components/organismos/Hero";
 import { Proyectos } from "./components/organismos/Proyectos.jsx";
 import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.jsx";
 import { SobreMi } from "./components/organismos/SobreMi.jsx";
+import { useScrollSpy } from "./hooks/useScrollSpy";
 
 export function App() {
   const sections = [

@@ -25,11 +25,11 @@ export function Proyectos() {
             />
           ))}
         </div>
-      </div>
-      <div className="mt-8 text-center">
-        <p className="text-lg font-medium text-text-subtitle-light dark:text-text-subtitle-dark hover:scale-105 hover:text-accent-secondary-light dark:hover:text-accent-secondary-dark transition-all duration-200">
-          Ver más ...
-        </p>
+        <div className="mt-12 mb-8 lg:mt-20 lg:mb-6 text-center">
+          <p className="text-lg font-medium text-text-subtitle-light dark:text-text-subtitle-dark hover:scale-105 hover:text-accent-secondary-light dark:hover:text-accent-secondary-dark transition-all duration-200">
+            Ver más ...
+          </p>
+        </div>
       </div>
     </section>
   );
