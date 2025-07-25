@@ -1,13 +1,11 @@
-import { useSwitchTema } from "../../hooks/useSwitchTema.jsx";
 import { MenuEscondido } from "../moleculas/MenuEscondido";
 import { useState } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { MenuComputadora } from "../moleculas/MenuComputadora.jsx";
 import { MenuIcon } from "../atomos/MenuIcon.jsx";
-import { Icono } from "../atomos/Icono.jsx";
+import { ThemeSwitcher } from "../moleculas/ThemeSwitcher.jsx";
 
 export function Header({ sections, sectionRefs, activeSection }) {
-  const { isDarkMode, handleThemeToggle } = useSwitchTema();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isMobile = useMediaQuery("(max-width: 768px)"); // Cambia el valor según tu diseño
@@ -21,26 +19,7 @@ export function Header({ sections, sectionRefs, activeSection }) {
       <div w-full className="max-w-[1900px] mx-auto">
         <div className="flex justify-between items-center w-full relative">
           <div className="absolute left-4 top-3">
-            <button
-              type="button"
-              onClick={() => handleThemeToggle(!isDarkMode)}
-              className="rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200"
-              aria-label="Cambiar tema"
-            >
-              <div className="rounded-full p-2 box-border bg-background-secondary-light dark:bg-background-secondary-dark group">
-                {isDarkMode ? (
-                  <Icono
-                    nombre="dark-mode"
-                    className="group-hover:text-accent-secondary-dark"
-                  />
-                ) : (
-                  <Icono
-                    nombre="light-mode"
-                    className="group-hover:text-accent-secondary-light"
-                  />
-                )}
-              </div>
-            </button>
+            <ThemeSwitcher />
           </div>
 
           {!isMobile && (

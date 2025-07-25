@@ -7,6 +7,7 @@ import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.j
 import { SobreMi } from "./components/organismos/SobreMi.jsx";
 import { Contacto } from "./components/organismos/Contacto.jsx";
 import { PiePagina } from "./components/moleculas/PiePagina.jsx";
+import { Toaster } from "react-hot-toast";
 
 export function App() {
   const sections = [
@@ -59,6 +60,19 @@ export function App() {
         ))}
       </main>
       <PiePagina />
+
+      {/* 👇 Añade este componente aquí. Se encargará de mostrar los toasts */}
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+        }}
+      />
     </div>
   );
 }

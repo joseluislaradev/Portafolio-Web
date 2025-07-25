@@ -1,6 +1,7 @@
 import { CardProyectos } from "../moleculas/CardProyectos.jsx";
 import { TitulosSecciones } from "../atomos/TitulosSecciones.jsx";
 import { proyectosData } from "../../data/proyectosData";
+import { LinkBoton } from "../moleculas/LinkBoton.jsx";
 
 export function Proyectos() {
   return (
@@ -26,9 +27,14 @@ export function Proyectos() {
           ))}
         </div>
         <div className="mt-12 mb-8 lg:mt-20 lg:mb-6 text-center">
-          <p className="text-lg font-medium text-text-subtitle-light dark:text-text-subtitle-dark hover:scale-105 hover:text-accent-secondary-light dark:hover:text-accent-secondary-dark transition-all duration-200">
-            Ver más ...
-          </p>
+          <LinkBoton
+            href="https://github.com/joseluislaradev?tab=repositories"
+            variant="ghost"
+            className="flex items-center justify-center gap-4 flex-row-reverse"
+            iconName="flecha-forward"
+          >
+            Ver todos mis proyectos en GitHub
+          </LinkBoton>
         </div>
       </div>
     </section>

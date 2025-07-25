@@ -10,7 +10,7 @@ export function Hero() {
       <figure>
         <img
           src="/src/assets/images/fotoPerfil.webp"
-          alt="Foto de perfil"
+          alt="Foto de perfil de José Luis Lara"
           className="rounded-full w-50 h-50 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg "
         />
       </figure>
@@ -18,8 +18,10 @@ export function Hero() {
         José Luis Lara
       </h1>
       <div className="flex flex-col items-center gap-2 md:gap-4">
-        <p className="text-lg md:text-3xl">Ingeniero de Software</p>
-        <p className="text-lg md:text-3xl">Desarrollador Full Stack Junior</p>
+        <p className="text-lg md:text-3xl font-semibold">
+          Ingeniero de Software
+        </p>
+        <p className="text-md md:text-2xl">Desarrollador Full Stack Junior</p>
       </div>
 
       <nav>
