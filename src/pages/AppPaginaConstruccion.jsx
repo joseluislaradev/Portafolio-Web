@@ -1,13 +1,11 @@
-import { LinkBoton } from "./components/moleculas/LinkBoton"; // Ajusta la ruta a tus componentes
-import { useSwitchTema } from "./hooks/useSwitchTema.jsx";
+import { LinkBoton } from "../components/moleculas/LinkBoton.jsx"; // Ajusta la ruta a tus componentes
+import { useSwitchTema } from "../hooks/useSwitchTema.jsx";
 
 export function AppPaginaConstruccion() {
   const { isDarkMode, handleThemeToggle } = useSwitchTema();
 
   return (
-    // Contenedor principal con tus colores de tema
     <main className="w-full min-h-screen bg-white dark:bg-gray-700 flex items-center justify-center sm:p-6 md:p-8">
-      {/* Botón para cambiar tema en la esquina */}
       <div className="absolute top-5 right-5">
         <button
           type="button"
@@ -29,7 +27,6 @@ export function AppPaginaConstruccion() {
         </button>
       </div>
 
-      {/* Tarjeta de contenido centrada */}
       <div className="relative mt-14 max-w-2xl w-full text-center bg-gray-200 dark:bg-background-primary-dark p-8 rounded-2xl shadow-lg">
         <h1 className="text-3xl md:text-5xl font-bold ">José Luis Lara</h1>
 
@@ -55,7 +52,7 @@ export function AppPaginaConstruccion() {
             <LinkBoton
               href="https://www.figma.com/proto/sljaSp7lyFJxOxLnXAEh2Y/Portafolio-web?node-id=68-217&t=S8aGzGQzGAGGlCxx-1"
               variant="primary"
-              iconName="figma" // Asume que tienes un ícono de figma en tu sprite
+              iconName="figma"
               className="!text-sm !md:text-base !lg:text-xl"
             >
               Ver Prototipo en Figma
@@ -65,7 +62,6 @@ export function AppPaginaConstruccion() {
 
         <div className="w-1/4 h-px my-8"></div>
 
-        {/* Sección de Desarrollo */}
         <div>
           <h2 className="text-2xl font-bold mb-3">
             Fase de Desarrollo (En Progreso)
@@ -88,7 +84,6 @@ export function AppPaginaConstruccion() {
 
         <div className="w-1/4 h-px mx-auto my-8"></div>
 
-        {/* Call to Action Final */}
         <div>
           <h2 className="text-2xl font-bold mb-3">
             Mientras tanto, conectemos.
@@ -104,7 +99,7 @@ export function AppPaginaConstruccion() {
             <LinkBoton
               href="mailto:hola@joseluislara.dev"
               variant="primary"
-              iconName="forward-email" // Asume que tienes un ícono de correo
+              iconName="forward-email"
             >
               Envíame un correo
             </LinkBoton>

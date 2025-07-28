@@ -2,7 +2,7 @@ import { Icono } from "../atomos/Icono.jsx";
 import { normalizar } from "../../utilidades/normalizarIconos.js";
 import { tecnologiasData } from "../../constantes/tecnologias.js";
 
-export function LabelTecnologias({ tecnologias }) {
+export function LabelTecnologias({ tecnologias, className = "" }) {
   return (
     <div className="flex flex-wrap gap-2 select-none">
       {tecnologias.map((nombreTecnologia) => {
@@ -21,7 +21,7 @@ export function LabelTecnologias({ tecnologias }) {
             title={info.label}
           >
             <Icono nombre={idIcono} tamaño="20" />
-            <span>{info.label}</span>
+            <span className={className}>{info.label}</span>
           </div>
         );
       })}

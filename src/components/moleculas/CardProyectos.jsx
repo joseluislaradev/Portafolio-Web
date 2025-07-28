@@ -50,7 +50,7 @@ export function CardProyectos({
           )}
 
           {/* Botón de Demo (Solo si existe la prop liveLink) */}
-          {liveLink && (
+          {liveLink && !detailsLink && (
             <LinkBoton
               href={liveLink}
               iconName="in-live-tv"
@@ -62,7 +62,7 @@ export function CardProyectos({
           )}
 
           {/* Botón de Código (Solo si existe la prop codeLink) */}
-          {codeLink && (
+          {codeLink && !detailsLink && (
             <LinkBoton
               href={codeLink}
               iconName="github"

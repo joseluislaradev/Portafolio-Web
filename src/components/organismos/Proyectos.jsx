@@ -8,7 +8,7 @@ export function Proyectos() {
   return (
     <section
       id="proyectos"
-      className="w-full min-h-screen p-4 bg-background-secondary-light dark:bg-background-secondary-dark py-8md:py-12 lg:py-16"
+      className="w-full min-h-screen p-4 bg-background-secondary-light dark:bg-background-secondary-dark py-8 md:py-12 lg:py-16"
     >
       <div className="max-w-6xl mx-auto ">
         <AnimateOnScroll>

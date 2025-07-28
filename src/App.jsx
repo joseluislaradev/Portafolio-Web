@@ -8,6 +8,8 @@ import { SobreMi } from "./components/organismos/SobreMi.jsx";
 import { Contacto } from "./components/organismos/Contacto.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
 import { Routes, Route } from "react-router-dom";
+import { NotFoundPage } from "./pages/NotFoundPage.jsx";
+import { ProjectDetailPage } from "./pages/DetallesProyecto.jsx";
 
 export function App() {
   const sections = [
@@ -56,6 +58,8 @@ export function App() {
       <main className="pt-16">
         <Routes>
           <Route path="/" element={<HomePage sections={sections} />} />
+          <Route path="/proyectos/:projectId" element={<ProjectDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
     </div>
