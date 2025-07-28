@@ -36,7 +36,7 @@ export function SobreMi() {
               <AnimateOnScroll variant="fade-in-left">
                 <figure className="w-full  flex items-center justify-center mb-4">
                   <img
-                    src="/src/assets/images/fotoPerfil.webp"
+                    src="/fotoPerfil.webp"
                     alt="Foto de perfil de José Luis Lara"
                     className="rounded-full w-40 h-40 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg [shape-outside:circle(50%)] "
                   />

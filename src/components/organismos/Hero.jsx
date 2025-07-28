@@ -9,7 +9,7 @@ export function Hero() {
     >
       <figure>
         <img
-          src="/src/assets/images/fotoPerfil.webp"
+          src="/fotoPerfil.webp"
           alt="Foto de perfil de José Luis Lara"
           className="rounded-full w-50 h-50 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg animate-fade-in"
         />

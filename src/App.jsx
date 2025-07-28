@@ -1,4 +1,4 @@
-import { Component, useRef } from "react";
+import { useRef } from "react";
 import { useScrollSpy } from "./hooks/useScrollSpy";
 import { Header } from "./components/organismos/Header";
 import { Hero } from "./components/organismos/Hero";
@@ -6,8 +6,8 @@ import { Proyectos } from "./components/organismos/Proyectos.jsx";
 import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.jsx";
 import { SobreMi } from "./components/organismos/SobreMi.jsx";
 import { Contacto } from "./components/organismos/Contacto.jsx";
-import { PiePagina } from "./components/moleculas/PiePagina.jsx";
-import { Toaster } from "react-hot-toast";
+import { HomePage } from "./pages/HomePage.jsx";
+import { Routes, Route } from "react-router-dom";
 
 export function App() {
   const sections = [
@@ -52,27 +52,12 @@ export function App() {
         sectionRefs={sectionRefs}
         activeSection={activeSection}
       />
+
       <main className="pt-16">
-        {sections.map(({ id, ref, Component }) => (
-          <div key={id} ref={ref} id={id}>
-            {Component && <Component />}
-          </div>
-        ))}
+        <Routes>
+          <Route path="/" element={<HomePage sections={sections} />} />
+        </Routes>
       </main>
-
-      <PiePagina />
-
-      <Toaster
-        position="top-center"
-        toastOptions={{
-          className: "",
-          duration: 5000,
-          style: {
-            background: "#363636",
-            color: "#fff",
-          },
-        }}
-      />
     </div>
   );
 }
