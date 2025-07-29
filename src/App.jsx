@@ -10,6 +10,8 @@ import { HomePage } from "./pages/HomePage.jsx";
 import { Routes, Route } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 import { ProjectDetailPage } from "./pages/DetallesProyecto.jsx";
+import { PiePagina } from "./components/moleculas/PiePagina.jsx";
+import { Toaster } from "react-hot-toast";
 
 export function App() {
   const sections = [
@@ -62,6 +64,21 @@ export function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
+
+      
+      <PiePagina />
+
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+        }}
+      />
     </div>
   );
 }

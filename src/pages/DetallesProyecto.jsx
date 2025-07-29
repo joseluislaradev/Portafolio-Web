@@ -74,7 +74,7 @@ export function ProjectDetailPage() {
 
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <div className="mt-8">
-            <h3 className="text-lg font-bold md:text-xl text-text-primary dark:text-dark-text-primary ">
+            <h3 className="text-lg font-bold md:text-xl text-center ">
               El Desafío
             </h3>
             {proyecto.detalle.desafio.map((parrafo, index) => (
@@ -85,7 +85,7 @@ export function ProjectDetailPage() {
           </div>
 
           <div className="mt-8">
-            <h3 className="text-lg font-bold md:text-xl text-text-primary dark:text-dark-text-primary">
+            <h3 className="text-lg font-bold md:text-xl text-center">
               Mi Solución
             </h3>
             {proyecto.detalle.solucion.map((parrafo, index) => (
@@ -96,19 +96,21 @@ export function ProjectDetailPage() {
           </div>
 
           <div className="mt-8">
-            <h3 className="text-lg font-bold md:text-xl text-text-primary dark:text-dark-text-primary">
+            <h3 className="text-lg font-bold md:text-xl text-center mb-8">
               {proyecto.detalle.procesoYMetodologia.titulo}
             </h3>
             {proyecto.detalle.procesoYMetodologia.parrafos.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i} className="text-base md:text-lg mt-4">{p}</p>
             ))}
-
+          
+          <ul className="list-disc pl-6 mt-4">
             {proyecto.detalle.procesoYMetodologia.subsecciones.map((sub, i) => (
-              <div key={i} className="mt-4">
-                <h3 className="text-xl font-semibold">{sub.titulo}</h3>
-                <p>{sub.contenido}</p>
-              </div>
+              <li key={i} className="mt-4">
+                <h3 className="text-lg font-semibold">{sub.titulo}</h3>
+                <p className="text-base md:text-lg">{sub.contenido}</p>
+              </li>
             ))}
+            </ul>
           </div>
         </div>
 
@@ -134,5 +136,6 @@ export function ProjectDetailPage() {
         </div>
       </div>
     </section>
+
   );
 }

@@ -15,7 +15,7 @@ export function PiePagina() {
             target="_blank"
             rel="noopener noreferrer"
             variant="ghostSecondary"
-            className="!text-sm md:!text-base lg:!text-lg !font-normal"
+            className="!text-sm md:!text-base lg:!text-lg !font-normal text-center"
           >
             {" "}
             Diseñado con Figma. Desarrollado con React y Tailwind CSS
