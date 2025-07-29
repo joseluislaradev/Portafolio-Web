@@ -13,7 +13,7 @@ export function Contacto() {
       <div className="mt-20 md:mt-24 flex flex-col items-center gap-12 md:gap-16 lg:gap-20">
         <AnimateOnScroll variant="zoom-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-shadow-lg/60 text-shadow-[var(--text-shadow-light)] dark:text-shadow-[var(--text-shadow-dark)]">
-            ¡ATERRICEMOS TU PROXIMO PROYECTO!
+            ¡ATERRICEMOS TU PRÓXIMO PROYECTO!
           </h2>
         </AnimateOnScroll>
         <AnimateOnScroll>

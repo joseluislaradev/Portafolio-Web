@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
 
 @plugin '@midudev/tailwind-animations';
 
@@ -55,4 +53,67 @@ a,
 link,
 img {
   user-select: none;
+}
+
+/* Estilos para el carrusel */
+
+/* Estilos para las flechas de navegación (Izquierda y Derecha) */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 35px !important;
+  height: 35px !important;
+  background-color: var(--color-accent-primary-light);
+  border-radius: 9999px;
+  color: var(
+    --color-text-button-light
+  ) !important; /* Color del ícono de la flecha */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: var(--color-hover-primary-light);
+}
+
+/* Para que se vean los íconos de las flechas (son más pequeños que el botón) */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px !important;
+  font-weight: 700;
+}
+
+/* Estilos para los "puntitos" de la paginación */
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: var(--color-accent-primary-light) !important;
+  opacity: 0.5 !important;
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: var(--color-accent-primary-light) !important;
+}
+
+/* --- Estilos para el Modo Oscuro --- */
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+  background-color: var(--color-accent-primary-dark) !important;
+  color: var(--color-text-button-dark) !important;
+}
+
+.dark .swiper-button-next:hover,
+.dark .swiper-button-prev:hover {
+  background-color: var(--color-hover-primary-dark) !important;
+}
+
+.dark .swiper-pagination-bullet {
+  background-color: var(--color-accent-primary-dark) !important;
+  opacity: 0.5 !important;
+}
+
+.dark .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: var(--color-accent-primary-dark) !important;
 }

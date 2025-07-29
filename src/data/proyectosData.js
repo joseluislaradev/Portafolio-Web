@@ -1,4 +1,15 @@
-import sinutImg from "../assets/images/proyectoSINUTACyD.webp";
+import sinutImg from "../assets/images/proyectoSinutAcyD/proyectoSINUTACyD.webp";
+import interfazAdminActividades from "../assets/images/proyectoSinutAcyD/interfazAdminActividades.webp";
+import interfazAlumnosActividad from "../assets/images/proyectoSinutAcyD/interfazAlumnosSeleccionActividad.webp";
+import interfazAlumnosSelectivos from "../assets/images/proyectoSinutAcyD/interfazAlumnosSeleccionSelectivo.webp";
+import interfazAlumnosPreregistro from "../assets/images/proyectoSinutAcyD/interfazAlumnosPreregistrosSeletivos.webp";
+import interfazAdminHIstorialPasesLista from "../assets/images/proyectoSinutAcyD/interfazAdminHIstorialPasesLista.webp";
+import interfazAdminHorarios from "../assets/images/proyectoSinutAcyD/interfazAdminHorarios.webp";
+import interfazAdminInicio from "../assets/images/proyectoSinutAcyD/interfazAdminInicio.webp";
+import interfazAdminListas from "../assets/images/proyectoSinutAcyD/interfazAdminListas.webp";
+import interfazAdminGrupos from "../assets/images/proyectoSinutAcyD/interfazAdminGrupos.webp";
+import interfazAdminRegistroActividades from "../assets/images/proyectoSinutAcyD/interfazAdminRegistroActividades.webp";
+
 import k9Img from "../assets/images/proyectoK-9Dispenser.webp";
 
 export const proyectosData = [
@@ -39,12 +50,52 @@ export const proyectosData = [
           imageCaption: "Interfaz de Login del sistema SINUTACyD",
         },
         {
-          imagenUrl: k9Img,
-          imageCaption: "Panel de administrador del sistema",
+          imagenUrl: interfazAdminActividades,
+          imageCaption:
+            "IInterfaz de actividades extracurriculares registradas en el sistema",
         },
         {
-          imagenUrl: sinutImg,
-          imageCaption: "Formulario para agregar una nueva actividad",
+          imagenUrl: interfazAdminRegistroActividades,
+          imageCaption:
+            "Interfaz de registro de actividades extracurriculares por parte del administrador del sistema",
+        },
+        {
+          imagenUrl: interfazAlumnosActividad,
+          imageCaption:
+            "Interfaz de selección de actividad extracurricular para alumnos",
+        },
+        {
+          imagenUrl: interfazAlumnosSelectivos,
+          imageCaption:
+            "Interfaz de selección de actividades para pertenecer a un selectivo académico",
+        },
+        {
+          imagenUrl: interfazAlumnosPreregistro,
+          imageCaption: "Interfaz de pre-registro para selectivos académicos",
+        },
+        {
+          imagenUrl: interfazAdminHIstorialPasesLista,
+          imageCaption:
+            "Interfaz de historial de pases de lista para actividades culturales y deportivas de parte del admin a los profesores",
+        },
+        {
+          imagenUrl: interfazAdminHorarios,
+          imageCaption:
+            "Interfaz de gestión de horarios de actividades de las diversas carreras",
+        },
+        {
+          imagenUrl: interfazAdminInicio,
+          imageCaption: "Interfaz de inicio del administrador del sistema",
+        },
+        {
+          imagenUrl: interfazAdminListas,
+          imageCaption:
+            "Interfaz de gestión de listas de alumnos inscritos en cierta actividad",
+        },
+        {
+          imagenUrl: interfazAdminGrupos,
+          imageCaption:
+            "Interfaz de gestión de grupos creados para cada profesor",
         },
       ],
       procesoYMetodologia: {

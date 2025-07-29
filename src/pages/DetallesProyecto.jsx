@@ -5,7 +5,9 @@ import { LinkBoton } from "../components/moleculas/LinkBoton";
 import { NotFoundPage } from "./NotFoundPage";
 import { TitulosSecciones } from "../components/atomos/TitulosSecciones.jsx";
 import { Boton } from "../components/atomos/Boton.jsx";
-import { Carousel } from "flowbite-react";
+import { Section } from "../layout/Section.jsx";
+import { Carousel } from "../components/moleculas/Carousel.jsx";
+import { Icono } from "../components/atomos/Icono.jsx";
 
 export function ProjectDetailPage() {
   const { projectId } = useParams(); // 'projectId' debe coincidir con el :projectId de tu Route
@@ -18,91 +20,65 @@ export function ProjectDetailPage() {
     return <NotFoundPage />;
   }
 
-  const customCarouselTheme = {
-    control: {
-      base: "inline-flex h-8 w-8 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-background-secondary-light dark:bg-background-secondary-dark text-text-primary dark:text-dark-text-primary hover:bg-background-secondary/50 dark:hover:bg-background-secondary/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-secondary-light dark:focus:ring-offset-background-secondary-dark",
-      icon: "h-5 w-5 sm:h-6 sm:w-6 text-text-primary-light dark:text-text-primary-dark",
-    },
-    // Estilos para los puntos indicadores de abajo
-    indicators: {
-      active: {
-        off: "bg-accent-primary-light/50 dark:bg-accent-primary-dark/50", // Color del indicador activo cuando no está seleccionado
-        on: "bg-accent-primary-light dark:bg-accent-primary-dark", // Color del indicador activo
-      },
-      base: "h-3 w-3 rounded-full",
-      wrapper: "absolute bottom-5 left-1/2 flex -translate-x-1/2 space-x-3",
-    },
-  };
-
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-background-primary-light via-50% to-background-secondary-light dark:from-background-primary-dark  dark:via-50%  dark:to-background-secondary-dark p-4 py-8 md:py-12 lg:py-16 ">
-      <div className="max-w-6xl mx-auto">
-        <Boton
-          iconName="flecha-back"
-          onClick={() => navigate(-1)}
-          variant="ghost"
-          className="flex items-center gap-2 "
-        >
-          Volver a todos los proyectos
-        </Boton>
+    <Section className=" !pt-8 bg-gradient-to-b from-background-primary-light via-50% to-background-secondary-light dark:from-background-primary-dark  dark:via-50%  dark:to-background-secondary-dark">
+      <Boton
+        iconName="flecha-back"
+        onClick={() => navigate(-1)}
+        variant="ghost"
+        className="flex items-center gap-2 "
+      >
+        Volver a todos los proyectos
+      </Boton>
 
-        <TitulosSecciones titulo={proyecto.titulo} />
+      <TitulosSecciones titulo={proyecto.titulo} />
 
-        <div className="mb-8 w-full h-64 md:h-96 lg:h-[500px]">
-          <Carousel theme={customCarouselTheme} slideInterval={5000}>
-            {proyecto.detalle.imagenesGaleria.map((imagen, index) => (
-              <img
-                key={index}
-                src={imagen.imagenUrl}
-                alt={imagen.imageCaption}
-                className="w-full h-full object-cover "
-              />
-            ))}
-          </Carousel>
+      <Carousel imagenes={proyecto.detalle.imagenesGaleria} className="mb-8" />
+
+      <p className="text-base md:text-lg mt-4">{proyecto.descripcion}</p>
+      <div className="mt-6 flex flex-col gap-4 ">
+        <p className="text-base md:text-lg font-bold">Tecnologias: </p>
+        <LabelTecnologias
+          tecnologias={proyecto.tecnologias}
+          className="text-sm md:text-base "
+        />
+      </div>
+
+      <hr className="my-12 border-gray-200 dark:border-gray-700" />
+
+      <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="mt-8">
+          <h3 className="text-lg font-bold md:text-xl text-center ">
+            El Desafío
+          </h3>
+          {proyecto.detalle.desafio.map((parrafo, index) => (
+            <p className="text-base md:text-lg mt-4" key={index}>
+              {parrafo}
+            </p>
+          ))}
         </div>
 
-        <p className="text-base md:text-lg mt-4">{proyecto.descripcion}</p>
-        <div className="mt-6 flex flex-col gap-4 ">
-          <p className="text-base md:text-lg font-bold">Tecnologias: </p>
-          <LabelTecnologias
-            tecnologias={proyecto.tecnologias}
-            className="text-sm md:text-base "
-          />
+        <div className="mt-8">
+          <h3 className="text-lg font-bold md:text-xl text-center">
+            Mi Solución
+          </h3>
+          {proyecto.detalle.solucion.map((parrafo, index) => (
+            <p className="text-base md:text-lg mt-4" key={index}>
+              {parrafo}
+            </p>
+          ))}
         </div>
 
-        <hr className="my-12 border-gray-200 dark:border-gray-700" />
+        <div className="mt-8">
+          <h3 className="text-lg font-bold md:text-xl text-center mb-8">
+            {proyecto.detalle.procesoYMetodologia.titulo}
+          </h3>
+          {proyecto.detalle.procesoYMetodologia.parrafos.map((p, i) => (
+            <p key={i} className="text-base md:text-lg mt-4">
+              {p}
+            </p>
+          ))}
 
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <div className="mt-8">
-            <h3 className="text-lg font-bold md:text-xl text-center ">
-              El Desafío
-            </h3>
-            {proyecto.detalle.desafio.map((parrafo, index) => (
-              <p className="text-base md:text-lg mt-4" key={index}>
-                {parrafo}
-              </p>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-lg font-bold md:text-xl text-center">
-              Mi Solución
-            </h3>
-            {proyecto.detalle.solucion.map((parrafo, index) => (
-              <p className="text-base md:text-lg mt-4" key={index}>
-                {parrafo}
-              </p>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <h3 className="text-lg font-bold md:text-xl text-center mb-8">
-              {proyecto.detalle.procesoYMetodologia.titulo}
-            </h3>
-            {proyecto.detalle.procesoYMetodologia.parrafos.map((p, i) => (
-              <p key={i} className="text-base md:text-lg mt-4">{p}</p>
-            ))}
-          
           <ul className="list-disc pl-6 mt-4">
             {proyecto.detalle.procesoYMetodologia.subsecciones.map((sub, i) => (
               <li key={i} className="mt-4">
@@ -110,32 +86,46 @@ export function ProjectDetailPage() {
                 <p className="text-base md:text-lg">{sub.contenido}</p>
               </li>
             ))}
-            </ul>
+          </ul>
+        </div>
+        <div className="flex mt-12 md:mt-16 gap-4 justify-center w-full bg-accent-primary-light/20 dark:bg-accent-primary-dark/20 p-4 rounded-lg">
+          <div>
+            <Icono nombre="info" />
+          </div>
+          <div className="">
+            <p className="text-base md:text-lg text-text-secondary-light dark:text-text-secondary-dark">
+              <span className="font-bold ">
+                Nota sobre la Confidencialidad:
+              </span>{" "}
+              Debido a acuerdos de confidencialidad, la información y las
+              imágenes aquí presentadas son una vista general. El enlace "Ver en
+              Vivo" dirige a la pantalla de login, ya que no es posible
+              compartir credenciales.
+            </p>
           </div>
         </div>
-
-        <div className="flex justify-center gap-4 mt-12 md:mt-16">
-          {proyecto.liveLink && (
-            <LinkBoton
-              href={proyecto.liveLink}
-              variant="primary"
-              iconName="in-live-tv"
-            >
-              Ver Demo en Vivo
-            </LinkBoton>
-          )}
-          {proyecto.codeLink && (
-            <LinkBoton
-              href={proyecto.codeLink}
-              variant="outline"
-              iconName="github"
-            >
-              Ver Código
-            </LinkBoton>
-          )}
-        </div>
       </div>
-    </section>
 
+      <div className="flex justify-center gap-4 mt-12 md:mt-16">
+        {proyecto.liveLink && (
+          <LinkBoton
+            href={proyecto.liveLink}
+            variant="primary"
+            iconName="in-live-tv"
+          >
+            Ver Demo en Vivo
+          </LinkBoton>
+        )}
+        {proyecto.codeLink && (
+          <LinkBoton
+            href={proyecto.codeLink}
+            variant="outline"
+            iconName="github"
+          >
+            Ver Código
+          </LinkBoton>
+        )}
+      </div>
+    </Section>
   );
 }
