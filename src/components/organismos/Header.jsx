@@ -4,36 +4,39 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { MenuComputadora } from "../moleculas/MenuComputadora.jsx";
 import { MenuIcon } from "../atomos/MenuIcon.jsx";
 import { ThemeSwitcher } from "../moleculas/ThemeSwitcher.jsx";
+import { Logo } from "../atomos/Logo.jsx";
 
 export function Header({ sections, sectionRefs, activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const isMobile = useMediaQuery("(max-width: 768px)"); // Cambia el valor según tu diseño
+  const isMobile = useMediaQuery("(max-width: 896px)"); // Cambia el valor según tu diseño
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="w-full fixed bg-background-primary-light dark:bg-background-primary-dark z-50 h-16 select-none ">
+    <header className="w-full fixed bg-background-primary-light dark:bg-background-primary-dark z-50 h-18 select-none p-4 pb-6">
       <div w-full className="max-w-[1900px] mx-auto">
         <div className="flex justify-between items-center w-full relative">
-          <div className="absolute left-4 top-3 animate-slide-in-top">
-            <ThemeSwitcher />
+          <div className="">
+            <Logo />
           </div>
 
           {!isMobile && (
-            <div className="absolute top-4 right-4 z-10 animate-slide-in-top">
+            <div className="flex items-center gap-4 animate-slide-in-top relative z-100">
               <MenuComputadora
                 sections={sections}
                 sectionRefs={sectionRefs}
                 activeSection={activeSection}
               />
+              <ThemeSwitcher />
             </div>
           )}
 
           {isMobile && (
-            <div className="absolute top-4 right-4 z-10">
+            <div className="flex items-center gap-4 animate-slide-in-top relative z-100">
+              <ThemeSwitcher />
               <button
                 type="button"
                 onClick={toggleMenu}

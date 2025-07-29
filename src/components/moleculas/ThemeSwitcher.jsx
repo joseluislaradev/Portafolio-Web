@@ -8,7 +8,7 @@ export function ThemeSwitcher() {
       type="button"
       onClick={() => handleThemeToggle(!isDarkMode)}
       className="rounded-md text-accent-primary-light dark:text-accent-primary-dark hover:scale-105 transition-transform duration-200"
-      aria-label="Cambiar tema"
+      title="Cambiar tema"
     >
       <div className="rounded-full p-2 box-border bg-background-secondary-light dark:bg-background-secondary-dark group">
         {isDarkMode ? (

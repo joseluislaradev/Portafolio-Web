@@ -7,13 +7,18 @@ import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.j
 import { SobreMi } from "./components/organismos/SobreMi.jsx";
 import { Contacto } from "./components/organismos/Contacto.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 import { ProjectDetailPage } from "./pages/DetallesProyecto.jsx";
 import { PiePagina } from "./components/moleculas/PiePagina.jsx";
 import { Toaster } from "react-hot-toast";
+import { HeaderDetalle } from "./components/organismos/HeaderDetalle.jsx";
 
 export function App() {
+  const location = useLocation();
+
+  const isProjectDetailPage = location.pathname.startsWith("/proyectos/");
+
   const sections = [
     { id: "hero", label: "Inicio", ref: useRef(null), Component: Hero },
     {
@@ -51,11 +56,15 @@ export function App() {
 
   return (
     <div className="">
-      <Header
-        sections={sections}
-        sectionRefs={sectionRefs}
-        activeSection={activeSection}
-      />
+      {isProjectDetailPage ? (
+        <HeaderDetalle />
+      ) : (
+        <Header
+          sections={sections}
+          sectionRefs={sectionRefs}
+          activeSection={activeSection}
+        />
+      )}
 
       <main className="pt-16">
         <Routes>
@@ -65,7 +74,6 @@ export function App() {
         </Routes>
       </main>
 
-      
       <PiePagina />
 
       <Toaster
