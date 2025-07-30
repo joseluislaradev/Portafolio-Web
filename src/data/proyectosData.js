@@ -40,7 +40,11 @@ export const proyectosData = [
     },
     detalle: {
       desafio: [
-        "El proceso para gestionar las actividades extracurriculares en la universidad era completamente manual, basado en largos y repetitivos formularios de Google. Esto no solo consumía una cantidad enorme de tiempo para los administradores, que debían filtrar información duplicada a mano, sino que también generaba una mala experiencia para los alumnos. Además, no existía una plataforma para gestionar a los profesores de estas actividades, quienes estaban desconectados del sistema administrativo principal. Aunque el problema era evidente para los usuarios, fue una de nuestras profesoras quien, con su visión interna, identificó la oportunidad de crear una solución tecnológica real.",
+        {
+          type: "p",
+          content:
+            "El proceso para gestionar las actividades extracurriculares en la universidad era completamente manual, basado en largos y repetitivos formularios de Google. Esto no solo consumía una cantidad enorme de tiempo para los administradores, que debían filtrar información duplicada a mano, sino que también generaba una mala experiencia para los alumnos. Además, no existía una plataforma para gestionar a los profesores de estas actividades, quienes estaban desconectados del sistema administrativo principal. Aunque el problema era evidente para los usuarios, fue una de nuestras profesoras quien, con su visión interna, identificó la oportunidad de crear una solución tecnológica real.",
+        },
       ],
       solucion: [
         {
@@ -51,22 +55,22 @@ export const proyectosData = [
         {
           type: "li",
           content:
-            "Negociación y Liderazgo: Lideré las conversaciones iniciales para presentar la visión del proyecto. Negociamos con éxito el apoyo de la universidad, consiguiendo una beca completa y un apoyo de alimentos para todo el equipo como reconocimiento al valor de nuestra propuesta.",
+            "Negociación y Liderazgo $ Lideré las conversaciones iniciales para presentar la visión del proyecto. Negociamos con éxito el apoyo de la universidad, consiguiendo una beca completa y un apoyo de alimentos para todo el equipo como reconocimiento al valor de nuestra propuesta.",
         },
         {
           type: "li",
           content:
-            "Gestión de Proyecto: Para asegurar que los objetivos estuvieran claros y evitar cambios constantes, implementé el uso de una carta de inicio de proyecto que todos los involucrados firmaron. Gestionamos el desarrollo con Scrum y Jira para entregar avances consistentes.",
+            "Gestión de Proyecto $ Para asegurar que los objetivos estuvieran claros y evitar cambios constantes, implementé el uso de una carta de inicio de proyecto que todos los involucrados firmaron. Gestionamos el desarrollo con Scrum y Jira para entregar avances consistentes.",
         },
         {
           type: "li",
           content:
-            "Visión Técnica Estratégica: Con el respaldo de la jefa del departamento de tecnología, tomamos la decisión estratégica de construir nuestra plataforma con Python y Django. Esto aseguraba que, en el futuro, nuestro sistema pudiera integrarse de manera sencilla al nuevo ecosistema tecnológico que la universidad planeaba migrar.",
+            "Visión Técnica Estratégica $ Con el respaldo de la jefa del departamento de tecnología, tomamos la decisión estratégica de construir nuestra plataforma con Python y Django. Esto aseguraba que, en el futuro, nuestro sistema pudiera integrarse de manera sencilla al nuevo ecosistema tecnológico que la universidad planeaba migrar.",
         },
         {
           type: "li",
           content:
-            "Desarrollo Full-Stack: Además de la gestión, estuve a cargo del diseño y la construcción de funcionalidades clave, desde la base de datos en MySQL hasta la interfaz de usuario con JavaScript y Bootstrap.",
+            "Desarrollo Full-Stack $ Además de la gestión, estuve a cargo del diseño y la construcción de funcionalidades clave, desde la base de datos en MySQL hasta la interfaz de usuario con JavaScript y Bootstrap.",
         },
       ],
       imagenesGaleria: [
@@ -155,6 +159,18 @@ export const proyectosData = [
           type: "li",
           content:
             "Diseño y Prototipado $ En el primer sprint, se centró en el diseño de la experiencia de usuario. Se crearon los mockups de toda la aplicación en Figma, aplicando los principios de Atomic Design para asegurar un sistema de componentes coherente y escalable.",
+        },
+        {
+          type: "button",
+          href: "https://www.figma.com/proto/vS7TfK1KHLUQ9c2j6Yk7M2/Design-System-SINUT-ACyD?node-id=147-1525&t=AmYNKNgk4cO8GkuL-1",
+          iconName: "figma",
+          variant: "secondary",
+          label: "Explorar Prototipo Interactivo",
+        },
+        {
+          type: "caption",
+          content:
+            "El prototipo en Figma guió las primeras fases del desarrollo. La versión final incluye mejoras y ajustes implementados durante la construcción.",
         },
         {
           type: "li",

@@ -8,7 +8,7 @@ import { Boton } from "../components/atomos/Boton.jsx";
 import { Section } from "../layout/Section.jsx";
 import { Carousel } from "../components/moleculas/Carousel.jsx";
 import { Alert } from "../components/moleculas/Alert.jsx";
-import { ContentRender } from "../components/moleculas/ContentRender.jsx";
+import { SeccionProyecto } from "../components/moleculas/SeccionProyecto.jsx";
 
 export function ProjectDetailPage() {
   const { projectId } = useParams(); // 'projectId' debe coincidir con el :projectId de tu Route
@@ -31,7 +31,9 @@ export function ProjectDetailPage() {
         Volver a todos los proyectos
       </Boton>
 
-      <TitulosSecciones titulo={proyecto.titulo} />
+      <h1 className="my-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl animate-fade-in">
+        {proyecto.titulo}
+      </h1>
 
       <Carousel imagenes={proyecto.detalle.imagenesGaleria} className="mb-8" />
 
@@ -46,27 +48,19 @@ export function ProjectDetailPage() {
 
       <hr className="my-12 border-gray-200 dark:border-gray-700" />
 
-      <div className="prose prose-lg dark:prose-invert max-w-none">
-        <div className="mt-8">
-          <h3 className="text-lg font-bold md:text-xl text-center ">
-            El Desafío
-          </h3>
-          <ContentRender content={proyecto.detalle.desafio} />
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-lg font-bold md:text-xl text-center">
-            Mi Solución
-          </h3>
-          <ContentRender content={proyecto.detalle.solucion} />
-        </div>
-
-        <div className="mt-8">
-          <h3 className="text-lg font-bold md:text-xl text-center mb-8">
-            Proceso y metodología
-          </h3>
-          <ContentRender content={proyecto.detalle.procesoYMetodologia} />
-        </div>
+      <div className="flex flex-col gap-12">
+        <SeccionProyecto
+          title="El Desafío"
+          content={proyecto.detalle.desafio}
+        />
+        <SeccionProyecto
+          title="Mi rol y solución"
+          content={proyecto.detalle.solucion}
+        />
+        <SeccionProyecto
+          title="Proceso y metodología"
+          content={proyecto.detalle.procesoYMetodologia}
+        />
 
         {proyecto.detalle.confidencialidad && (
           <Alert
