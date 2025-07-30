@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Importa los componentes de Swiper para React
 import { Swiper, SwiperSlide } from "swiper/react";
 // Importa los módulos necesarios de Swiper (Navegación, Paginación, etc.)
@@ -15,6 +15,19 @@ import "swiper/css/pagination";
 export function Carousel({ imagenes }) {
   // 2. Estado para manejar el lightbox (abierto/cerrado y qué imagen mostrar)
   const [index, setIndex] = useState(-1);
+
+  //Tenemos que estar del lado del cliente asi eviatmos qeu vite lo ejecute en el servidor
+  const [isClient, setIsClient] = useState(false);
+
+  // Este useEffect se ejecuta solo en el navegador, después del primer renderizado
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  // Si no estamos en el cliente, no renderizamos nada (o un esqueleto de carga)
+  if (!isClient) {
+    return null; // O <div className="w-full h-full bg-gray-200 animate-pulse"></div>
+  }
 
   // Prepara las imágenes para el formato que necesita el lightbox
   const slides = imagenes.map((img) => ({

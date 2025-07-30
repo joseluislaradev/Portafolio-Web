@@ -1,3 +1,3 @@
 export function ContentRender({ content = {} }) {
-  return <h1>hOLA</h1>;
+  return <h1>En proceso de construcción</h1>;
 }
