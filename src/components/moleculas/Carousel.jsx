@@ -12,7 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export function Carousel({ imagenes }) {
+export function Carousel({ imagenes, className = "" }) {
   // 2. Estado para manejar el lightbox (abierto/cerrado y qué imagen mostrar)
   const [index, setIndex] = useState(-1);
 
@@ -36,7 +36,7 @@ export function Carousel({ imagenes }) {
           delay: 4000,
           disableOnInteraction: false,
         }}
-        className="w-full h-full rounded-lg"
+        className={"w-full h-full rounded-lg " + className}
       >
         {/* Hacemos el map igual que antes */}
         {imagenes.map((imagen, index) => (
