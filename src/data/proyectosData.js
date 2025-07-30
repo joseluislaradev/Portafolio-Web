@@ -9,6 +9,9 @@ import interfazAdminInicio from "../assets/images/proyectoSinutAcyD/interfazAdmi
 import interfazAdminListas from "../assets/images/proyectoSinutAcyD/interfazAdminListas.webp";
 import interfazAdminGrupos from "../assets/images/proyectoSinutAcyD/interfazAdminGrupos.webp";
 import interfazAdminRegistroActividades from "../assets/images/proyectoSinutAcyD/interfazAdminRegistroActividades.webp";
+import interfazProfesorPaseLista from "../assets/images/proyectoSinutAcyD/interfazProfesorPaseLista.webp";
+import interfazProfesorGrupos from "../assets/images/proyectoSinutAcyD/interfazProfesorGrupos.webp";
+import interfazProfesorHistorialPaseLista from "../assets/images/proyectoSinutAcyD/interfazProfesorHistorialPaseLista.webp";
 
 import k9Img from "../assets/images/proyectoK-9Dispenser.webp";
 
@@ -35,67 +38,82 @@ export const proyectosData = [
     ],
     detalle: {
       desafio: [
-        "El objetivo del proyecto era optimizar los tiempos de los administradores y garantizar una gestión eficaz de usuarios (profesores y alumnos) y de las actividades culturales y deportivas.",
-        "Anteriormente, procesos similares se realizaban manualmente, lo que generaba dificultades, confusión, pérdida de tiempo y errores para el personal involucrado.",
-        "Se necesitaba automatizar y optimizar los procesos, así como centralizar la información para facilitar la administración tanto para la universidad como para los usuarios.",
-      ],
+        "El proceso para gestionar las actividades extracurriculares en la universidad era completamente manual, basado en largos y repetitivos formularios de Google. Esto no solo consumía una cantidad enorme de tiempo para los administradores, que debían filtrar información duplicada a mano, sino que también generaba una mala experiencia para los alumnos. Además, no existía una plataforma para gestionar a los profesores de estas actividades, quienes estaban desconectados del sistema administrativo principal."      ],
       solucion: [
-        "Propuse y lideré el desarrollo de un sistema multiplataforma diseñado para centralizar y gestionar de manera eficiente las actividades culturales y deportivas de la universidad.",
-        "Como líder del equipo, mi rol fue full-stack. Estuve a cargo del diseño del sistema, la planificación de los sprints, el desarrollo de funcionalidades clave tanto en el frontend como en el backend, y el despliegue final en los servidores de la universidad",
-        "El sistema final es una plataforma funcional y eficiente que permite una gestión dinámica de usuarios y actividades, reduciendo significativamente los tiempos de administración.",
+        { type: 'p', content:"En lugar de esperar una tarea, mi equipo y yo identificamos esta ineficiencia y tomamos la iniciativa. Nos acercamos directamente al jefe del departamento de vinculación para proponerle el desarrollo de una solución a medida." },
+        { type: 'p', content:"Como líder del proyecto, mis responsabilidades fueron más allá del código:" },
+        { type: 'li', content:"Negociación y Liderazgo: Lideré las conversaciones iniciales para presentar la visión del proyecto. Negociamos con éxito el apoyo de la universidad, consiguiendo una beca completa y un apoyo de alimentos para todo el equipo como reconocimiento al valor de nuestra propuesta." },
+        { type: 'li', content:"Gestión de Proyecto: Para asegurar que los objetivos estuvieran claros y evitar cambios constantes, implementé el uso de una carta de inicio de proyecto que todos los involucrados firmaron. Gestionamos el desarrollo con Scrum y Jira para entregar avances consistentes." },
+        { type: 'li', content:"Visión Técnica Estratégica: Sabiendo que la universidad planeaba migrar su sistema principal a Django, tomamos la decisión estratégica de construir nuestra plataforma con Python y Django. La desarrollamos de forma aislada pero completamente compatible, asegurando que en el futuro pudiera integrarse de manera sencilla al nuevo ecosistema tecnológico de la institución." },
+        { type: 'li', content:"Desarrollo Full-Stack: Además de la gestión, estuve a cargo del diseño y la construcción de funcionalidades clave, desde la base de datos en MySQL hasta la interfaz de usuario con JavaScript y Bootstrap." }
       ],
       imagenesGaleria: [
         {
           imagenUrl: sinutImg,
-          imageCaption: "Interfaz de Login del sistema SINUTACyD",
-        },
-        {
-          imagenUrl: interfazAdminActividades,
-          imageCaption:
-            "IInterfaz de actividades extracurriculares registradas en el sistema",
-        },
-        {
-          imagenUrl: interfazAdminRegistroActividades,
-          imageCaption:
-            "Interfaz de registro de actividades extracurriculares por parte del administrador del sistema",
+          imageCaption: "Interfaz de Login del sistema SINUTACyD.",
         },
         {
           imagenUrl: interfazAlumnosActividad,
           imageCaption:
-            "Interfaz de selección de actividad extracurricular para alumnos",
+            "Alumnos: Interfaz de selección de su actividad extracurricular.",
         },
         {
           imagenUrl: interfazAlumnosSelectivos,
           imageCaption:
-            "Interfaz de selección de actividades para pertenecer a un selectivo académico",
+            "Alumnos: Interfaz de selección de actividades para pertenecer a un selectivo académico.",
         },
         {
           imagenUrl: interfazAlumnosPreregistro,
-          imageCaption: "Interfaz de pre-registro para selectivos académicos",
+          imageCaption: "Alumnos: Interfaz de pre-registro para selectivos académicos.",
+        },
+                {
+          imagenUrl: interfazAdminActividades,
+          imageCaption:
+            "Admin: Interfaz de actividades extracurriculares registradas en el sistema.",
+        },
+        {
+          imagenUrl: interfazAdminRegistroActividades,
+          imageCaption:
+            "Admin: Interfaz de registro de actividades extracurriculares por parte del administrador del sistema.",
         },
         {
           imagenUrl: interfazAdminHIstorialPasesLista,
           imageCaption:
-            "Interfaz de historial de pases de lista para actividades culturales y deportivas de parte del admin a los profesores",
+            "Admin: Interfaz de historial de pases de lista para los grupos de todos los profesores.",
         },
         {
           imagenUrl: interfazAdminHorarios,
           imageCaption:
-            "Interfaz de gestión de horarios de actividades de las diversas carreras",
+            "Admin: Interfaz de gestión de horarios a los que las diversas carreras tienen actividad.",
         },
         {
           imagenUrl: interfazAdminInicio,
-          imageCaption: "Interfaz de inicio del administrador del sistema",
+          imageCaption: "Admin: Interfaz de inicio del administrador del sistema.",
         },
         {
           imagenUrl: interfazAdminListas,
           imageCaption:
-            "Interfaz de gestión de listas de alumnos inscritos en cierta actividad",
+            "Admin: Interfaz de gestión de listas de alumnos inscritos en cierta actividad.",
         },
         {
           imagenUrl: interfazAdminGrupos,
           imageCaption:
-            "Interfaz de gestión de grupos creados para cada profesor",
+            "Admin: Interfaz de gestión de grupos creados para cada profesor.",
+        },
+        {
+          imagenUrl: interfazProfesorPaseLista,
+          imageCaption:
+            "Profesor: Interfaz de pase de lista a los alumnos inscritos en su actividad.",
+        },
+        {
+          imagenUrl: interfazProfesorGrupos,
+          imageCaption:
+            "Profesor: Interfaz de grupos de alumnos inscritos en actividades correspondientes al profesor.",
+        },
+        {
+          imagenUrl: interfazProfesorHistorialPaseLista,
+          imageCaption:
+            "Profesor: Interfaz de historial de pases de lista realizados o no por el profesor.",
         },
       ],
       procesoYMetodologia: {

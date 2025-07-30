@@ -1,8 +1,11 @@
+import { useState } from "react";
 // Importa los componentes de Swiper para React
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Importa los módulos necesarios de Swiper (Navegación, Paginación, etc.)
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 // Importa los estilos base de Swiper
 import "swiper/css";
@@ -10,7 +13,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export function Carousel({ imagenes }) {
+  // 2. Estado para manejar el lightbox (abierto/cerrado y qué imagen mostrar)
+  const [index, setIndex] = useState(-1);
+
+  // Prepara las imágenes para el formato que necesita el lightbox
+  const slides = imagenes.map(img => ({ src: img.imagenUrl, title: img.imageCaption }));
+
   return (
+    <>
     <Swiper
       // Instala los módulos que vamos a usar
       modules={[Navigation, Pagination, Autoplay]}
@@ -27,19 +37,28 @@ export function Carousel({ imagenes }) {
     >
       {/* Hacemos el map igual que antes */}
       {imagenes.map((imagen, index) => (
-        <SwiperSlide key={index}>
-          <figure className=" w-full h-full">
+        <SwiperSlide key={index} onClick={() => setIndex(index)} className="cursor-pointer">
+          <div className="h-full w-full">
             <img
               src={imagen.imagenUrl}
               alt={imagen.imageCaption}
               className="w-full h-full object-cover"
             />
-            <figcaption className="absolute bottom-2 left-0 w-full bg-black/30 text-white p-4 text-center">
+            <div className="p-6 text-center text-sm text-text-secondary dark:text-dark-text-secondary bg-background-secondary dark:bg-dark-background-secondary">
               {imagen.imageCaption}
-            </figcaption>
-          </figure>
+            </div>
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
+
+      <Lightbox
+        index={index}
+        slides={slides}
+        open={index >= 0}
+        close={() => setIndex(-1)}
+      />
+
+      </>
   );
 }
