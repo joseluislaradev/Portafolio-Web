@@ -28,7 +28,7 @@ export function Tabs({ tabs, defaultTab }) {
         ))}
       </div>
 
-      <AnimateOnScroll variant="fade-in-right">
+      <AnimateOnScroll variant="fade-in-up">
         <div>{activeContent}</div>
       </AnimateOnScroll>
     </div>
