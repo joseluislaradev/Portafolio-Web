@@ -7,7 +7,8 @@ import { TitulosSecciones } from "../components/atomos/TitulosSecciones.jsx";
 import { Boton } from "../components/atomos/Boton.jsx";
 import { Section } from "../layout/Section.jsx";
 import { Carousel } from "../components/moleculas/Carousel.jsx";
-import { Icono } from "../components/atomos/Icono.jsx";
+import { Alert } from "../components/moleculas/Alert.jsx";
+import { ContentRender } from "../components/moleculas/ContentRender.jsx";
 
 export function ProjectDetailPage() {
   const { projectId } = useParams(); // 'projectId' debe coincidir con el :projectId de tu Route
@@ -15,7 +16,6 @@ export function ProjectDetailPage() {
 
   const proyecto = proyectosData.find((p) => p.slug === projectId);
 
-  // 3. Si el proyecto no existe, mostramos la página 404
   if (!proyecto) {
     return <NotFoundPage />;
   }
@@ -51,74 +51,47 @@ export function ProjectDetailPage() {
           <h3 className="text-lg font-bold md:text-xl text-center ">
             El Desafío
           </h3>
-          {proyecto.detalle.desafio.map((parrafo, index) => (
-            <p className="text-base md:text-lg mt-4" key={index}>
-              {parrafo}
-            </p>
-          ))}
+          <ContentRender content={proyecto.detalle.desafio} />
         </div>
 
         <div className="mt-8">
           <h3 className="text-lg font-bold md:text-xl text-center">
             Mi Solución
           </h3>
-          {proyecto.detalle.solucion.map((parrafo, index) => (
-            <p className="text-base md:text-lg mt-4" key={index}>
-              {parrafo}
-            </p>
-          ))}
+          <ContentRender content={proyecto.detalle.solucion} />
         </div>
 
         <div className="mt-8">
           <h3 className="text-lg font-bold md:text-xl text-center mb-8">
-            {proyecto.detalle.procesoYMetodologia.titulo}
+            Proceso y metodología
           </h3>
-          {proyecto.detalle.procesoYMetodologia.parrafos.map((p, i) => (
-            <p key={i} className="text-base md:text-lg mt-4">
-              {p}
-            </p>
-          ))}
+          <ContentRender content={proyecto.detalle.procesoYMetodologia} />
+        </div>
 
-          <ul className="list-disc pl-6 mt-4">
-            {proyecto.detalle.procesoYMetodologia.subsecciones.map((sub, i) => (
-              <li key={i} className="mt-4">
-                <h3 className="text-lg font-semibold">{sub.titulo}</h3>
-                <p className="text-base md:text-lg">{sub.contenido}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex mt-12 md:mt-16 gap-4 justify-center w-full bg-accent-primary-light/20 dark:bg-accent-primary-dark/20 p-4 rounded-lg">
-          <div>
-            <Icono nombre="info" />
-          </div>
-          <div className="">
-            <p className="text-base md:text-lg text-text-secondary-light dark:text-text-secondary-dark">
-              <span className="font-bold ">
-                Nota sobre la Confidencialidad:
-              </span>{" "}
-              Debido a acuerdos de confidencialidad, la información y las
-              imágenes aquí presentadas son una vista general. El enlace "Ver en
-              Vivo" dirige a la pantalla de login, ya que no es posible
-              compartir credenciales.
-            </p>
-          </div>
-        </div>
+        {proyecto.detalle.confidencialidad && (
+          <Alert
+            iconName="info"
+            tipo="info"
+            titulo="Nota sobre la Confidencialidad:"
+          >
+            {proyecto.detalle.confidencialidad}
+          </Alert>
+        )}
       </div>
 
       <div className="flex justify-center gap-4 mt-12 md:mt-16">
-        {proyecto.liveLink && (
+        {proyecto.buttons.liveLink && (
           <LinkBoton
-            href={proyecto.liveLink}
+            href={proyecto.buttons.liveLink}
             variant="primary"
             iconName="in-live-tv"
           >
             Ver Demo en Vivo
           </LinkBoton>
         )}
-        {proyecto.codeLink && (
+        {proyecto.buttons.codeLink && (
           <LinkBoton
-            href={proyecto.codeLink}
+            href={proyecto.buttons.codeLink}
             variant="outline"
             iconName="github"
           >

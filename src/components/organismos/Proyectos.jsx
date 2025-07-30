@@ -23,9 +23,9 @@ export function Proyectos() {
               titulo={proyecto.titulo}
               descripcion={proyecto.descripcion}
               imageUrl={proyecto.imageUrl}
-              detailsLink={proyecto.detailsLink}
-              liveLink={proyecto.liveLink}
-              codeLink={proyecto.codeLink}
+              detailsLink={proyecto.buttons.detailsLink}
+              liveLink={proyecto.buttons.liveLink}
+              codeLink={proyecto.buttons.codeLink}
               tecnologias={proyecto.tecnologias}
             />
           </AnimateOnScroll>

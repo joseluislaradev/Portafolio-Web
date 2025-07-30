@@ -17,40 +17,47 @@ export function Carousel({ imagenes }) {
   const [index, setIndex] = useState(-1);
 
   // Prepara las imágenes para el formato que necesita el lightbox
-  const slides = imagenes.map(img => ({ src: img.imagenUrl, title: img.imageCaption }));
+  const slides = imagenes.map((img) => ({
+    src: img.imagenUrl,
+    title: img.imageCaption,
+  }));
 
   return (
     <>
-    <Swiper
-      // Instala los módulos que vamos a usar
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={30} // Espacio entre slides
-      slidesPerView={1} // Cuántos slides se ven a la vez
-      navigation // Activa las flechas de navegación
-      pagination={{ clickable: true }} // Activa los "puntitos" y los hace clickeables
-      loop={true} // Para que el carrusel sea infinito
-      autoplay={{
-        delay: 4000,
-        disableOnInteraction: false,
-      }}
-      className="w-full h-full rounded-lg"
-    >
-      {/* Hacemos el map igual que antes */}
-      {imagenes.map((imagen, index) => (
-        <SwiperSlide key={index} onClick={() => setIndex(index)} className="cursor-pointer">
-          <div className="h-full w-full">
-            <img
-              src={imagen.imagenUrl}
-              alt={imagen.imageCaption}
-              className="w-full h-full object-cover"
-            />
-            <div className="p-6 text-center text-sm text-text-secondary dark:text-dark-text-secondary bg-background-secondary dark:bg-dark-background-secondary">
-              {imagen.imageCaption}
+      <Swiper
+        // Instala los módulos que vamos a usar
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30} // Espacio entre slides
+        slidesPerView={1} // Cuántos slides se ven a la vez
+        navigation // Activa las flechas de navegación
+        pagination={{ clickable: true }} // Activa los "puntitos" y los hace clickeables
+        loop={true} // Para que el carrusel sea infinito
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        className="w-full h-full rounded-lg"
+      >
+        {/* Hacemos el map igual que antes */}
+        {imagenes.map((imagen, index) => (
+          <SwiperSlide
+            key={index}
+            onClick={() => setIndex(index)}
+            className="cursor-pointer"
+          >
+            <div className="h-full w-full relative">
+              <img
+                src={imagen.imagenUrl}
+                alt={imagen.imageCaption}
+                className="w-full h-full object-cover"
+              />
+              <div className="p-4 pb-8 lg:pb-10 text-center text-sm text-text-secondary dark:text-dark-text-secondary bg-background-secondary dark:bg-dark-background-secondary">
+                {imagen.imageCaption}
+              </div>
             </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       <Lightbox
         index={index}
@@ -58,7 +65,6 @@ export function Carousel({ imagenes }) {
         open={index >= 0}
         close={() => setIndex(-1)}
       />
-
-      </>
+    </>
   );
 }

@@ -17,3 +17,9 @@ export const buttonVariantStyles = {
   circle:
     "w-12 h-12 flex items-center justify-center rounded-full bg-accent-primary-light dark:bg-accent-primary-dark text-text-button-light dark:text-text-button-dark hover:bg-hover-primary-light dark:hover:bg-hover-primary-dark transition-colors duration-200",
 };
+
+export const alertBaseStyles = "p-4 rounded-lg";
+
+export const alertStyles = {
+  info: "bg-accent-primary-light/20 dark:bg-accent-primary-dark/20 flex mt-12 md:mt-16 gap-4 justify-center w-full",
+};

@@ -20,12 +20,10 @@ export const proyectosData = [
     id: 1,
     slug: "sinutacyd",
     titulo: "Sinut ACyD",
-    liveLink: "http://201.116.195.203/",
     descripcion:
       "Sinut ACyD es una plataforma web que centraliza y simplifica la gestión de actividades culturales y deportivas para toda una comunidad universitaria. Sinut ACyD optimiza la inscripción, seguimiento y registro de eventos para estudiantes, profesores y administrativos.",
     imageUrl: sinutImg,
     imageCaption: "Inicio de sesión de Sinut ACyD",
-    detailsLink: "/proyectos/sinutacyd",
     tecnologias: [
       "Django",
       "MySQL",
@@ -36,16 +34,40 @@ export const proyectosData = [
       "Git",
       "JavaScript",
     ],
+    buttons: {
+      liveLink: "http://201.116.195.203/",
+      detailsLink: "/proyectos/sinutacyd",
+    },
     detalle: {
       desafio: [
-        "El proceso para gestionar las actividades extracurriculares en la universidad era completamente manual, basado en largos y repetitivos formularios de Google. Esto no solo consumía una cantidad enorme de tiempo para los administradores, que debían filtrar información duplicada a mano, sino que también generaba una mala experiencia para los alumnos. Además, no existía una plataforma para gestionar a los profesores de estas actividades, quienes estaban desconectados del sistema administrativo principal."      ],
+        "El proceso para gestionar las actividades extracurriculares en la universidad era completamente manual, basado en largos y repetitivos formularios de Google. Esto no solo consumía una cantidad enorme de tiempo para los administradores, que debían filtrar información duplicada a mano, sino que también generaba una mala experiencia para los alumnos. Además, no existía una plataforma para gestionar a los profesores de estas actividades, quienes estaban desconectados del sistema administrativo principal. Aunque el problema era evidente para los usuarios, fue una de nuestras profesoras quien, con su visión interna, identificó la oportunidad de crear una solución tecnológica real.",
+      ],
       solucion: [
-        { type: 'p', content:"En lugar de esperar una tarea, mi equipo y yo identificamos esta ineficiencia y tomamos la iniciativa. Nos acercamos directamente al jefe del departamento de vinculación para proponerle el desarrollo de una solución a medida." },
-        { type: 'p', content:"Como líder del proyecto, mis responsabilidades fueron más allá del código:" },
-        { type: 'li', content:"Negociación y Liderazgo: Lideré las conversaciones iniciales para presentar la visión del proyecto. Negociamos con éxito el apoyo de la universidad, consiguiendo una beca completa y un apoyo de alimentos para todo el equipo como reconocimiento al valor de nuestra propuesta." },
-        { type: 'li', content:"Gestión de Proyecto: Para asegurar que los objetivos estuvieran claros y evitar cambios constantes, implementé el uso de una carta de inicio de proyecto que todos los involucrados firmaron. Gestionamos el desarrollo con Scrum y Jira para entregar avances consistentes." },
-        { type: 'li', content:"Visión Técnica Estratégica: Sabiendo que la universidad planeaba migrar su sistema principal a Django, tomamos la decisión estratégica de construir nuestra plataforma con Python y Django. La desarrollamos de forma aislada pero completamente compatible, asegurando que en el futuro pudiera integrarse de manera sencilla al nuevo ecosistema tecnológico de la institución." },
-        { type: 'li', content:"Desarrollo Full-Stack: Además de la gestión, estuve a cargo del diseño y la construcción de funcionalidades clave, desde la base de datos en MySQL hasta la interfaz de usuario con JavaScript y Bootstrap." }
+        {
+          type: "p",
+          content:
+            "El proyecto nació de una idea de una profesora, quien la compartió con un compañero. Me sumé al equipo poco después y, con el apoyo de mis compañeros, tomé el rol de líder del proyecto para darle estructura y dirección a nuestra iniciativa. Mis responsabilidades clave fueron: ",
+        },
+        {
+          type: "li",
+          content:
+            "Negociación y Liderazgo: Lideré las conversaciones iniciales para presentar la visión del proyecto. Negociamos con éxito el apoyo de la universidad, consiguiendo una beca completa y un apoyo de alimentos para todo el equipo como reconocimiento al valor de nuestra propuesta.",
+        },
+        {
+          type: "li",
+          content:
+            "Gestión de Proyecto: Para asegurar que los objetivos estuvieran claros y evitar cambios constantes, implementé el uso de una carta de inicio de proyecto que todos los involucrados firmaron. Gestionamos el desarrollo con Scrum y Jira para entregar avances consistentes.",
+        },
+        {
+          type: "li",
+          content:
+            "Visión Técnica Estratégica: Con el respaldo de la jefa del departamento de tecnología, tomamos la decisión estratégica de construir nuestra plataforma con Python y Django. Esto aseguraba que, en el futuro, nuestro sistema pudiera integrarse de manera sencilla al nuevo ecosistema tecnológico que la universidad planeaba migrar.",
+        },
+        {
+          type: "li",
+          content:
+            "Desarrollo Full-Stack: Además de la gestión, estuve a cargo del diseño y la construcción de funcionalidades clave, desde la base de datos en MySQL hasta la interfaz de usuario con JavaScript y Bootstrap.",
+        },
       ],
       imagenesGaleria: [
         {
@@ -64,9 +86,10 @@ export const proyectosData = [
         },
         {
           imagenUrl: interfazAlumnosPreregistro,
-          imageCaption: "Alumnos: Interfaz de pre-registro para selectivos académicos.",
+          imageCaption:
+            "Alumnos: Interfaz de pre-registro para selectivos académicos.",
         },
-                {
+        {
           imagenUrl: interfazAdminActividades,
           imageCaption:
             "Admin: Interfaz de actividades extracurriculares registradas en el sistema.",
@@ -88,7 +111,8 @@ export const proyectosData = [
         },
         {
           imagenUrl: interfazAdminInicio,
-          imageCaption: "Admin: Interfaz de inicio del administrador del sistema.",
+          imageCaption:
+            "Admin: Interfaz de inicio del administrador del sistema.",
         },
         {
           imagenUrl: interfazAdminListas,
@@ -116,34 +140,35 @@ export const proyectosData = [
             "Profesor: Interfaz de historial de pases de lista realizados o no por el profesor.",
         },
       ],
-      procesoYMetodologia: {
-        titulo: "Proceso y Metodología",
-        parrafos: [
-          "Para garantizar una gestión de proyecto flexible, el desarrollo se gestionó utilizando la metodología ágil SCRUM, organizando el trabajo en fases claras desde la planificación hasta la ejecución.",
-        ],
-        subsecciones: [
-          {
-            titulo: "Preparación y Planificación",
-            contenido:
-              "En la fase inicial, se definió y priorizó el Product Backlog. Utilizamos Jira para la gestión de tareas del sprint y Confluence para la documentación centralizada. El control de versiones se manejó con Git y GitHub.",
-          },
-          {
-            titulo: "Diseño y Prototipado",
-            contenido:
-              "El primer sprint se centró en el diseño de la experiencia de usuario. Se crearon los mockups de toda la aplicación en Figma, aplicando los principios de Atomic Design para asegurar un sistema de componentes coherente y escalable.",
-          },
-          {
-            titulo: "Desarrollo en Sprints",
-            contenido:
-              "Durante los sprints de desarrollo, el equipo se enfocó en construir las funcionalidades clave del sistema: un sistema de login para cuatro tipos de usuarios, un módulo CRUD completo para la gestión de actividades y la integración con la base de datos MySQL utilizando Django.",
-          },
-          {
-            titulo: "Pruebas y Calidad",
-            contenido:
-              "Se realizaron pruebas dinámicas y de integración continuas al final de cada ciclo para asegurar que las funcionalidades cumplieran con los requisitos, permitiendo identificar y corregir errores en tiempo real.",
-          },
-        ],
-      },
+      procesoYMetodologia: [
+        {
+          type: "p",
+          content:
+            "Para garantizar una gestión de proyecto flexible, el desarrollo se gestionó utilizando la metodología ágil SCRUM, organizando el trabajo en fases claras desde la planificación hasta la ejecución.",
+        },
+        {
+          type: "li",
+          content:
+            "Preparación y Planificación $ En la fase inicial, se definió y priorizó el Product Backlog. Utilizamos Jira para la gestión de tareas del sprint y Confluence para la documentación centralizada. El control de versiones se manejó con Git y GitHub.",
+        },
+        {
+          type: "li",
+          content:
+            "Diseño y Prototipado $ En el primer sprint, se centró en el diseño de la experiencia de usuario. Se crearon los mockups de toda la aplicación en Figma, aplicando los principios de Atomic Design para asegurar un sistema de componentes coherente y escalable.",
+        },
+        {
+          type: "li",
+          content:
+            "Desarrollo en Sprints $ Durante los sprints de desarrollo, el equipo se enfocó en construir las funcionalidades clave del sistema: un sistema de login para cuatro tipos de usuarios, un módulo CRUD completo para la gestión de actividades y la integración con la base de datos MySQL utilizando Django.",
+        },
+        {
+          type: "li",
+          content:
+            "Pruebas y Calidad $ Se realizaron pruebas dinámicas y de integración continuas al final de cada ciclo para asegurar que las funcionalidades cumplieran con los requisitos, permitiendo identificar y corregir errores en tiempo real.",
+        },
+      ],
+      confidencialidad:
+        'Debido a acuerdos de confidencialidad, la información y las imágenes aquí presentadas son una vista general. El enlace "Ver en Vivo" dirige a la pantalla de login, ya que no es posible compartir credenciales.',
     },
   },
   {
@@ -164,5 +189,9 @@ export const proyectosData = [
       "Git",
       "JavaScript",
     ],
+    buttons: {
+      liveLink: "https://k9dispenser.infy.uk/",
+      codeLink: "https://github.com/joseluislaradev/K-9-dispenser",
+    },
   },
 ];
