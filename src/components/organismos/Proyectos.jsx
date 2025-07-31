@@ -19,7 +19,6 @@ export function Proyectos() {
         {proyectosData.map((proyecto) => (
           <AnimateOnScroll key={proyecto.id}>
             <CardProyectos
-              key={proyecto.id}
               titulo={proyecto.titulo}
               descripcion={proyecto.descripcion}
               imageUrl={proyecto.imageUrl}

@@ -2,7 +2,6 @@ import { LinkBoton } from "../moleculas/LinkBoton.jsx";
 import { LabelTecnologias } from "./LabelTecnologias.jsx";
 
 export function CardProyectos({
-  key,
   titulo,
   descripcion,
   imageUrl,
@@ -12,10 +11,7 @@ export function CardProyectos({
   tecnologias = [],
 }) {
   return (
-    <article
-      className=" rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 group "
-      key={key}
-    >
+    <article className=" rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 group ">
       <figure className="flex items-center overflow-hidden h-full w-full group-hover:scale-[.98] transition-transform duration-200 ease-in-out">
         <img
           src={imageUrl}

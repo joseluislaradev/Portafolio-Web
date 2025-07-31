@@ -8,9 +8,6 @@ export function CuadriculaTecnologia({ titulo, tecnologias }) {
       <div className="flex w-full flex-wrap justify-center items-center gap-5 mt-7">
         {tecnologias.map((tecnologia, index) => {
           const tecnologiaNormalizada = normalizar(tecnologia);
-          console.log(
-            `Icono normalizado para ${tecnologia}: ${tecnologiaNormalizada}`
-          );
           return (
             <div
               key={index}

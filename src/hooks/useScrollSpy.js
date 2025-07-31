@@ -11,7 +11,6 @@ export function useScrollSpy(sectionRefs) {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            console.log(`Sección activa: ${entry.target.id}`);
             break; // Salimos del bucle en cuanto encontramos la primera sección visible
           }
         }
@@ -20,9 +19,8 @@ export function useScrollSpy(sectionRefs) {
         // 👇 ESTA ES LA MAGIA 👇
         // Crea una "zona de activación" en el centro de la pantalla.
         // Se activará cualquier sección que entre en esta zona.
-        rootMargin: "-40% 0px -60% 0px"
+        rootMargin: "-40% 0px -60% 0px",
       }
-      
     );
 
     // Creamos un array con los elementos del DOM a partir de los refs

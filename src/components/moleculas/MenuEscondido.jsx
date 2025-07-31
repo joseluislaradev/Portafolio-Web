@@ -7,8 +7,6 @@ export function MenuEscondido({
   sectionRefs,
   isMenuOpen,
 }) {
-  console.log("isMenuOpen:", isMenuOpen); // Verifica el estado del menú en la consola
-
   return (
     <Transition
       show={isMenuOpen} // La visibilidad se controla con el estado de React

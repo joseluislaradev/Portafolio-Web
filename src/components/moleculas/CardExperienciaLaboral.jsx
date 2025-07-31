@@ -1,13 +1,11 @@
-
 export function CardExperienciaLaboral({
-  key,
   titulo,
   descripcion,
   empresa,
   fecha,
 }) {
   return (
-    <div className="flex w-full h-full gap-8" key={key}>
+    <div className="flex w-full h-full gap-8">
       <div className="flex justify-center">
         <div className="h-full w-0.5 bg-accent-primary-light/60 dark:bg-accent-primary-dark/60  relative">
           <div className="p-2 bg-accent-primary-light dark:bg-accent-primary-dark rounded-full absolute -translate-x-4/10 translate-y-3"></div>

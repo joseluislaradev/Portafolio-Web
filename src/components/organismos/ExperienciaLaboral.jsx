@@ -18,7 +18,6 @@ export function ExperienciaLaboral() {
           ({ titulo, descripcion, empresa, fecha }, index) => (
             <AnimateOnScroll key={index}>
               <CardExperienciaLaboral
-                key={index}
                 titulo={titulo}
                 descripcion={descripcion}
                 empresa={empresa}
