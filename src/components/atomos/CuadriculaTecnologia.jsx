@@ -16,7 +16,7 @@ export function CuadriculaTecnologia({ titulo, tecnologias }) {
               <div>
                 <Icono nombre={tecnologiaNormalizada} />
               </div>
-              <h5>{tecnologia}</h5>
+              <p>{tecnologia}</p>
             </div>
           );
         })}
