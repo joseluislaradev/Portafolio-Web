@@ -29,8 +29,8 @@
   --text-shadow-light: 2px 2px 5px var(--color-accent-primary-light);
 
   /* Modo oscuro*/
-  --color-background-primary-dark: #111827;
-  --color-background-secondary-dark: #1e293b;
+  --color-background-primary-dark: #02001d;
+  --color-background-secondary-dark: #020126;
 
   --color-text-primary-dark: #f1f5f9;
   --color-text-secondary-dark: #e5e7eb;
@@ -39,8 +39,8 @@
   --color-text-button-dark: #f1f5f9;
   --color-text-button-outline-dark: #f1f5f9;
 
-  --color-text-button-fondoClaro-dark: #fff;
-  --color-button-principal-dark: #38bdf8; /* Azul oscuro para el botón principal */
+  --color-text-button-principal-dark: #fff;
+  --color-button-principal-dark: #1d7cbc; /* Azul oscuro para el botón principal */
 
   --color-accent-primary-dark: #38bdf8;
   --color-accent-secondary-dark: #a78bfa;

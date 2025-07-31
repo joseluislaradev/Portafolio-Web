@@ -5,7 +5,7 @@ export const buttonBaseStyles =
 // Objeto que define los estilos específicos para cada variante
 export const buttonVariantStyles = {
   primary:
-    "text-lg md:text-xl lg:text-2xl flex items-center justify-center gap-2 md:gap-4 bg-accent-primary-light dark:bg-button-principal-dark hover:bg-hover-primary-light hover:scale-105 dark:hover:bg-hover-primary-dark text-text-button-light dark:text-text-button-fondoOscuro-dark  duration-200 transition-transform ease-in-out",
+    "text-lg md:text-xl lg:text-2xl flex items-center justify-center gap-2 md:gap-4 bg-accent-primary-light dark:bg-button-principal-dark hover:bg-hover-primary-light hover:scale-105 dark:hover:bg-hover-primary-dark text-text-button-light dark:text-text-button-principal-dark  duration-200 transition-transform ease-in-out",
   secondary:
     "flex items-center justify-center gap-4 bg-accent-secondary-light  text-text-button-light dark:text-text-button-dark hover:bg-[--color-hover-secondary-light] dark:bg-accent-secondary-dark  dark:hover:bg-[--color-hover-secondary-dark] hover:scale-105 transition-transform duration-200",
   outline:
