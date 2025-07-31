@@ -13,7 +13,7 @@ export function Hero() {
           <img
             src="/fotoPerfil.webp"
             alt="Foto de perfil de José Luis Lara"
-            className="rounded-full w-50 h-50 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg animate-fade-in"
+            className="rounded-full w-50 h-50 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg animate-fade-in object-cover"
           />
         </figure>
         <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl animate-fade-in">

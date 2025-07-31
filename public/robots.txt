@@ -1,0 +1,3 @@
+# Permitir a todos los robots rastrear todo el sitio
+User-agent: * # Regla para todos los robots
+Allow: /  # Pueden ver todo el sitio

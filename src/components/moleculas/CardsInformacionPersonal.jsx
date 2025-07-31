@@ -7,7 +7,7 @@ export function CardInformacionPersonal({ iconName, titulo, subtitulo }) {
         <Icono nombre={iconName} />
       </div>
       <div className="flex flex-col">
-        <h4 className="font-bold text-lg md:text-xl lg:text-2xl">{titulo}</h4>
+        <p className="font-bold text-lg md:text-xl lg:text-2xl">{titulo}</p>
         <p className="text-base md:text-lg lg:text-xl">{subtitulo}</p>
       </div>
     </div>

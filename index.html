@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Preconexión para fuentes y pedirla desde antes de ocuparla porque ya se que se va a usar -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--Precargando LCP (Largest Contentful Paint)-->
+    <link rel="preload" as="image" href="/fotoPerfil.webp" />
     <title>José Luis Lara | Ingeniero de Software</title>
     <meta
       name="description"
@@ -10,10 +14,6 @@
     />
     <link rel="icon" type="image/x-icon" href="/folder.svg" />
     <link rel="stylesheet" href="/src/index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu"
-    />
     <meta property="og:type" content="website" />
     <meta
       property="og:title"

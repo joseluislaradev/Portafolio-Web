@@ -31,6 +31,7 @@ export function PiePagina() {
                   variant="circle"
                   iconName="linkedin"
                   className="!text-xl md:!text-2xl lg:!text-3xl"
+                  aria-label="Perfil de LinkedIn de José Luis Lara"
                 />
               </div>
               <div>
@@ -39,6 +40,7 @@ export function PiePagina() {
                   variant="circle"
                   iconName="github"
                   className="!text-xl md:!text-2xl lg:!text-3xl"
+                  aria-label="Perfil de GitHub de José Luis Lara"
                 />
               </div>
             </div>
