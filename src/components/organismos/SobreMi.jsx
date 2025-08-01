@@ -5,6 +5,7 @@ import { CardEducacion } from "../moleculas/CardEducacion.jsx";
 import { StackTecnologias } from "../moleculas/StackTecnologias.jsx";
 import { AnimateOnScroll } from "../atomos/AnimateOnScroll.jsx";
 import { Section } from "../../layout/Section.jsx";
+import { FotoPerfil } from "../atomos/FotoPerfil.jsx";
 
 // Creamos un pequeño componente aquí mismo para la lista de educación
 function EducacionList() {
@@ -34,13 +35,9 @@ export function SobreMi() {
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 w-full">
           <div className="w-full lg:w-3/6">
             <AnimateOnScroll variant="fade-in-left">
-              <figure className="w-full  flex items-center justify-center mb-4">
-                <img
-                  src="/fotoPerfil.webp"
-                  alt="Foto de perfil de José Luis Lara"
-                  className="rounded-full w-40 h-40 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg [shape-outside:circle(50%)] "
-                />
-              </figure>
+              <div className="w-full  flex items-center justify-center mb-4">
+                <FotoPerfil className="shadow-lg [shape-outside:circle(50%)]" />
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll variant="fade-in-left">

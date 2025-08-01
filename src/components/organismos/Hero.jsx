@@ -1,6 +1,7 @@
 import { LinkBoton } from "../moleculas/LinkBoton.jsx";
 import { BotonDescarga } from "../moleculas/BotonDescarga.jsx";
 import { Section } from "../../layout/Section.jsx";
+import { FotoPerfil } from "../atomos/FotoPerfil.jsx";
 
 export function Hero() {
   return (
@@ -9,13 +10,7 @@ export function Hero() {
       className="flex flex-col items-center justify-center !min-h-[calc(100vh-4.5rem)] bg-gradient-to-b from-background-primary-light via-50% to-background-secondary-light dark:from-background-primary-dark  dark:via-50%  dark:to-background-secondary-dark"
     >
       <div className="flex flex-col items-center justify-center gap-6 md:gap-10 lg:gap-12 h-full w-full">
-        <figure>
-          <img
-            src="/fotoPerfil.webp"
-            alt="Foto de perfil de José Luis Lara"
-            className="rounded-full w-50 h-50 md:w-60 md:h-60 lg:w-70 lg:h-70 shadow-lg animate-fade-in object-cover"
-          />
-        </figure>
+        <FotoPerfil />
         <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl animate-fade-in">
           José Luis Lara
         </h1>
