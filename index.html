@@ -7,7 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!--Precargando LCP (Largest Contentful Paint)-->
-    <link rel="preload" as="image" href="/fotoPerfil.webp" />
+    <link
+      rel="preload"
+      as="image"
+      href="/fotoPerfil-grande.webp"
+      imagesrcset="
+        /fotoPerfil-pequena.webp 140w, 
+        /fotoPerfil-mediana.webp 280w, 
+        /fotoPerfil-grande.webp 560w
+      "
+      imagesizes="(max-width: 768px) 160px, 280px"
+    />
     <title>José Luis Lara | Ingeniero de Software</title>
     <meta
       name="description"
