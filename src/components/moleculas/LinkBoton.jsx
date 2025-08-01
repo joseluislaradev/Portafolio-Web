@@ -15,8 +15,7 @@ export function LinkBoton({
   sectionRefs,
   ...rest
 }) {
-  const isInternalLink = href && href.startsWith("/");
-  const isAnchorLink = href && (href.startsWith("#") || href.startsWith("/#"));
+  const isExternal = href?.startsWith("http");
 
   const combinedClassName = clsx(
     buttonBaseStyles,
@@ -24,7 +23,24 @@ export function LinkBoton({
     className
   );
 
-  if (isAnchorLink) {
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        className={combinedClassName}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...rest}
+      >
+        {iconName && (
+          <Icono nombre={iconName} tamaño={24} color="currentColor" />
+        )}
+        {children}
+      </a>
+    );
+  }
+
+  if (sectionRefs) {
     const handleAnchorClick = (event) => {
       event.preventDefault();
       const targetId = href.substring(1);
@@ -37,23 +53,12 @@ export function LinkBoton({
     };
 
     return (
-      <a
-        href={href}
+      <Link
+        to={href}
         className={combinedClassName}
         onClick={handleAnchorClick}
         {...rest}
       >
-        {iconName && (
-          <Icono nombre={iconName} tamaño={24} color="currentColor" />
-        )}
-        {children}
-      </a>
-    );
-  }
-
-  if (isInternalLink) {
-    return (
-      <Link to={href} className={combinedClassName} {...rest}>
         {iconName && (
           <Icono nombre={iconName} tamaño={24} color="currentColor" />
         )}
@@ -63,15 +68,9 @@ export function LinkBoton({
   }
 
   return (
-    <a
-      href={href}
-      className={combinedClassName}
-      target="_blank"
-      rel="noopener noreferrer"
-      {...rest}
-    >
+    <Link to={href} className={combinedClassName} {...rest}>
       {iconName && <Icono nombre={iconName} tamaño={24} color="currentColor" />}
       {children}
-    </a>
+    </Link>
   );
 }

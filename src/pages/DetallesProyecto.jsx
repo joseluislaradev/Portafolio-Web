@@ -1,9 +1,8 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { proyectosData } from "../data/proyectosData";
 import { LabelTecnologias } from "../components/moleculas/LabelTecnologias";
 import { LinkBoton } from "../components/moleculas/LinkBoton";
 import { NotFoundPage } from "./NotFoundPage";
-import { Boton } from "../components/atomos/Boton.jsx";
 import { Section } from "../layout/Section.jsx";
 import { Carousel } from "../components/moleculas/Carousel.jsx";
 import { Alert } from "../components/moleculas/Alert.jsx";
@@ -12,7 +11,6 @@ import { AnimateOnScroll } from "../components/atomos/AnimateOnScroll.jsx";
 
 export function ProjectDetailPage() {
   const { projectId } = useParams(); // 'projectId' debe coincidir con el :projectId de tu Route
-  const navigate = useNavigate(); // hook para obtener la función de navegación
 
   const proyecto = proyectosData.find((p) => p.slug === projectId);
 
@@ -22,14 +20,14 @@ export function ProjectDetailPage() {
 
   return (
     <Section className=" !pt-8 bg-gradient-to-b from-background-primary-light via-50% to-background-secondary-light dark:from-background-primary-dark  dark:via-50%  dark:to-background-secondary-dark">
-      <Boton
+      <LinkBoton
+        href="/#proyectos"
         iconName="flecha-back"
-        onClick={() => navigate(-1)}
         variant="ghost"
         className="flex items-center gap-2 animate-slide-in-top "
       >
         Volver a todos los proyectos
-      </Boton>
+      </LinkBoton>
 
       <h1 className="my-12 text-center text-3xl font-bold md:text-4xl lg:text-5xl animate-fade-in">
         {proyecto.titulo}

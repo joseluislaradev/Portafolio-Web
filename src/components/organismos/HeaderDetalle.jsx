@@ -4,7 +4,7 @@ import { Logo } from "../atomos/Logo.jsx";
 export function HeaderDetalle() {
   return (
     <header className="w-full fixed bg-background-primary-light dark:bg-background-primary-dark z-50 h-18 select-none p-4">
-      <div w-full className="max-w-[1900px] mx-auto">
+      <div className="max-w-[1900px] mx-auto">
         <div className="flex justify-between items-center w-full relative">
           <div className="">
             <Logo />
