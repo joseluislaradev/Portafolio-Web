@@ -6,13 +6,15 @@ import { Proyectos } from "./components/organismos/Proyectos.jsx";
 import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.jsx";
 import { SobreMi } from "./components/organismos/SobreMi.jsx";
 import { Contacto } from "./components/organismos/Contacto.jsx";
-import { HomePage } from "./pages/HomePage.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { NotFoundPage } from "./pages/NotFoundPage.jsx";
-import { ProjectDetailPage } from "./pages/DetallesProyecto.jsx";
 import { PiePagina } from "./components/moleculas/PiePagina.jsx";
 import { Toaster } from "react-hot-toast";
 import { HeaderDetalle } from "./components/organismos/HeaderDetalle.jsx";
+import { lazy } from "react";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
 
 export function App() {
   const location = useLocation();
@@ -67,11 +69,22 @@ export function App() {
       )}
 
       <main className="pt-16">
-        <Routes>
-          <Route path="/" element={<HomePage sections={sections} />} />
-          <Route path="/proyectos/:projectId" element={<ProjectDetailPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Suspense
+          fallback={
+            <div className="h-screen w-full flex items-center justify-center">
+              Cargando...
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<HomePage sections={sections} />} />
+            <Route
+              path="/proyectos/:projectId"
+              element={<ProjectDetailPage />}
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </main>
 
       <PiePagina />
