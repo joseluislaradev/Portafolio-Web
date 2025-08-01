@@ -20,6 +20,9 @@
   --color-text-button-light: #ffffff; /* Texto de botones primarios siempre blanco */
   --color-text-button-outline-light: #3b82f6; /* Texto para botones outline */
 
+  --color-button-principal-light: #0060a0; 
+  --color-button-secondary-light: #008156; 
+
   --color-accent-primary-light: #0060a0; /* TU AZUL: El protagonista */
   --color-accent-secondary-light: #008156; /* Un verde esmeralda como acento secundario vibrante */
 
@@ -36,11 +39,11 @@
   --color-text-secondary-dark: #e5e7eb;
   --color-text-subtitle-dark: #9ca3af;
 
-  --color-text-button-dark: #f1f5f9;
+  --color-text-button-dark: #ffffff;
   --color-text-button-outline-dark: #f1f5f9;
 
-  --color-text-button-principal-dark: #fff;
-  --color-button-principal-dark: #1d7cbc; /* Azul oscuro para el botón principal */
+  --color-button-principal-dark: #1d7cbc; 
+  --color-button-secondary-dark: #7e67c2;
 
   --color-accent-primary-dark: #38bdf8;
   --color-accent-secondary-dark: #a78bfa;

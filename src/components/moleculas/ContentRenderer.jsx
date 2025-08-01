@@ -60,7 +60,7 @@ export function ContentRenderer({ content = [] }) {
             href={item.href}
             variant={item.variant || "secondary"}
             iconName={item.iconName}
-            className="my-8 mx-auto max-w-[300px] w-full"
+            className="my-8 mx-auto max-w-[350px] w-full"
           >
             {item.label}
           </LinkBoton>
