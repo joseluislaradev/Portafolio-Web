@@ -20,5 +20,6 @@ export const normalizar = (nombre) => {
   if (nombre === "Jira") return "jira";
   if (nombre === "Slack") return "slack";
   if (nombre === "Notion") return "notion";
+  if (nombre === "Node.js") return "nodejs";
   return nombre.toLowerCase().replace(/\s+/g, "-");
 };
