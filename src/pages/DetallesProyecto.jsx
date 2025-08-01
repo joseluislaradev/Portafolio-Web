@@ -35,10 +35,12 @@ export function ProjectDetailPage() {
         {proyecto.titulo}
       </h1>
 
-      <Carousel
-        imagenes={proyecto.detalle.imagenesGaleria}
-        className="animate-fade-in"
-      />
+      <div className="w-full aspect-video rounded-lg overflow-hidden my-8">
+        <Carousel
+          imagenes={proyecto.detalle.imagenesGaleria}
+          className="animate-fade-in"
+        />
+      </div>
 
       <AnimateOnScroll>
         <p className="text-base md:text-lg mt-4">{proyecto.descripcion}</p>
