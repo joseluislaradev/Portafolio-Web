@@ -26,8 +26,8 @@
   --color-accent-primary-light: #0060a0; /* TU AZUL: El protagonista */
   --color-accent-secondary-light: #008156; /* Un verde esmeralda como acento secundario vibrante */
 
-  --color-hover-primary-light: #2563eb; /* Un azul un poco más oscuro para el hover */
-  --color-hover-secondary-light: #0b7451; /* Un verde más oscuro para el hover */
+  --color-hover-primary-light: #004776; /* Un azul un poco más oscuro para el hover */
+  --color-hover-secondary-light: #0a6547; /* Un verde más oscuro para el hover */
 
   --text-shadow-light: 2px 2px 5px var(--color-accent-primary-light);
 
@@ -48,8 +48,8 @@
   --color-accent-primary-dark: #38bdf8;
   --color-accent-secondary-dark: #a78bfa;
 
-  --color-hover-primary-dark: #1496d0;
-  --color-hover-secondary-dark: #8b72d7;
+  --color-hover-primary-dark: #2493dd;
+  --color-hover-secondary-dark: #705ea7;
 
   --text-shadow-dark: 0 0 8px var(--color-accent-primary-dark);
 }
