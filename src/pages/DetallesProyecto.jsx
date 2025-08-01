@@ -2,14 +2,14 @@ import { useParams } from "react-router-dom";
 import { proyectosData } from "../data/proyectosData";
 import { LabelTecnologias } from "../components/moleculas/LabelTecnologias";
 import { LinkBoton } from "../components/moleculas/LinkBoton";
-import { NotFoundPage } from "./NotFoundPage";
+import NotFoundPage from "./NotFoundPage";
 import { Section } from "../layout/Section.jsx";
 import { Carousel } from "../components/moleculas/Carousel.jsx";
 import { Alert } from "../components/moleculas/Alert.jsx";
 import { SeccionProyecto } from "../components/moleculas/SeccionProyecto.jsx";
 import { AnimateOnScroll } from "../components/atomos/AnimateOnScroll.jsx";
 
-export function ProjectDetailPage() {
+export default function ProjectDetailPage() {
   const { projectId } = useParams(); // 'projectId' debe coincidir con el :projectId de tu Route
 
   const proyecto = proyectosData.find((p) => p.slug === projectId);

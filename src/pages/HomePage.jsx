@@ -1,5 +1,4 @@
-
-export function HomePage({ sections }) {
+export default function HomePage({ sections }) {
   return (
     <>
       {sections.map(({ id, ref, Component }) => (
@@ -7,7 +6,6 @@ export function HomePage({ sections }) {
           {Component && <Component />}
         </div>
       ))}
-
     </>
   );
 }

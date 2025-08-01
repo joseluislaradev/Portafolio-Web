@@ -1,6 +1,6 @@
 import { LinkBoton } from "../components/moleculas/LinkBoton"; // Ajusta la ruta a tu componente
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
   return (
     <section className="flex items-center justify-center min-h-[calc(100vh-64px)]  bg-background-secondary-light dark:bg-background-secondary-dark text-center p-4">
       <div className="flex flex-col items-center gap-4">

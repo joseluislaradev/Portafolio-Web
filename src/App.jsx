@@ -7,14 +7,14 @@ import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.j
 import { SobreMi } from "./components/organismos/SobreMi.jsx";
 import { Contacto } from "./components/organismos/Contacto.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 import { PiePagina } from "./components/moleculas/PiePagina.jsx";
 import { Toaster } from "react-hot-toast";
 import { HeaderDetalle } from "./components/organismos/HeaderDetalle.jsx";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 
-const HomePage = lazy(() => import("./pages/HomePage"));
-const ProjectDetailPage = lazy(() => import("./pages/ProjectDetailPage"));
+const HomePage = lazy(() => import("./pages/HomePage.jsx"));
+const ProjectDetailPage = lazy(() => import("./pages/DetallesProyecto.jsx"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
 export function App() {
   const location = useLocation();
