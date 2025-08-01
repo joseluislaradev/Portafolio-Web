@@ -1,6 +1,6 @@
 // Estilos base que TODOS los botones comparten (padding, fuente, bordes, etc.)
 export const buttonBaseStyles =
-  "font-bold py-2 px-4 rounded-2xl transition-colors duration-200 ";
+  "font-bold py-2 px-4 rounded-2xl transition-colors duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-offset-1";
 
 // Objeto que define los estilos específicos para cada variante
 export const buttonVariantStyles = {

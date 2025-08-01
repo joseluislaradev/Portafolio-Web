@@ -50,6 +50,8 @@ export function Carousel({ imagenes, className = "" }) {
                 src={imagen.imagenUrl}
                 alt={imagen.imageCaption}
                 className="w-full h-full object-cover"
+                fetchpriority={index === 0 ? "high" : "low"}
+                loading={index === 0 ? "eager" : "lazy"}
               />
               <div className="p-4 pb-8 lg:pb-10 text-center text-sm text-text-secondary dark:text-dark-text-secondary bg-background-secondary dark:bg-dark-background-secondary">
                 {imagen.imageCaption}
