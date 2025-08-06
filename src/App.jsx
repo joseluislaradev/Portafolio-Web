@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useScrollSpy } from "./hooks/useScrollSpy";
 import { Header } from "./components/organismos/Header";
 import { Hero } from "./components/organismos/Hero";
@@ -18,6 +18,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
 export function App() {
   const location = useLocation();
+  const [observedElements, setObservedElements] = useState([]); 
 
   const isProjectDetailPage = location.pathname.startsWith("/proyectos/");
 
@@ -48,13 +49,23 @@ export function App() {
       Component: Contacto,
     },
   ];
+
   //Extraemos los refs de cada sección
   const sectionRefs = sections.reduce((acc, section) => {
     acc[section.id] = section.ref;
     return acc;
   }, {});
 
-  const activeSection = useScrollSpy(sectionRefs);
+  const activeSection = useScrollSpy(observedElements);
+
+  useEffect(() => {
+    const elements = Object.values(sectionRefs)
+      .map(ref => ref.current)
+      .filter(Boolean); // Filtra los que sigan siendo null
+      
+    setObservedElements(elements);
+  }, [sectionRefs]); 
+
 
   return (
     <div className="">
