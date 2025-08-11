@@ -18,7 +18,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
 export function App() {
   const location = useLocation();
-  const [observedElements, setObservedElements] = useState([]); 
+  const [observedElements, setObservedElements] = useState([]);
 
   const isProjectDetailPage = location.pathname.startsWith("/proyectos/");
 
@@ -56,16 +56,16 @@ export function App() {
     return acc;
   }, {});
 
-  const activeSection = useScrollSpy(observedElements);
+  const activeSection =
+    location.pathname === "/" ? useScrollSpy(sectionRefs) : null;
 
   useEffect(() => {
     const elements = Object.values(sectionRefs)
-      .map(ref => ref.current)
+      .map((ref) => ref.current)
       .filter(Boolean); // Filtra los que sigan siendo null
-      
-    setObservedElements(elements);
-  }, [sectionRefs]); 
 
+    setObservedElements(elements);
+  }, [sectionRefs]);
 
   return (
     <div className="">
@@ -87,7 +87,7 @@ export function App() {
             </div>
           }
         >
-          <Routes>
+          <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage sections={sections} />} />
             <Route
               path="/proyectos/:projectId"
