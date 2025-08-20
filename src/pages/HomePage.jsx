@@ -1,4 +1,8 @@
-export default function HomePage({ sections }) {
+import { useSections } from "../hooks/useSections.js";
+
+export default function HomePage() {
+  const { sections } = useSections();
+
   return (
     <>
       {sections.map(({ id, ref, Component }) => (

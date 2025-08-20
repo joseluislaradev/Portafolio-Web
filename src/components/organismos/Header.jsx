@@ -5,9 +5,11 @@ import { MenuComputadora } from "../moleculas/MenuComputadora.jsx";
 import { MenuIcon } from "../atomos/MenuIcon.jsx";
 import { ThemeSwitcher } from "../moleculas/ThemeSwitcher.jsx";
 import { Logo } from "../atomos/Logo.jsx";
+import { useSections } from "../../hooks/useSections.js";
 
-export function Header({ sections, sectionRefs, activeSection }) {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { sections, sectionRefs, activeSection } = useSections();
 
   const isMobile = useMediaQuery("(max-width: 896px)"); // Cambia el valor según tu diseño
 

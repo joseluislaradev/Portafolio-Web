@@ -1,9 +1,10 @@
 // src/hooks/useScrollSpy.js
-import { useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { SectionActiveContext } from "../context/sectionActive.jsx"; // Asegúrate de que la ruta es correcta
 
 // El hook ahora recibe el objeto de refs
 export function useScrollSpy(sectionRefs) {
-  const [activeSection, setActiveSection] = useState("");
+  const { activeSection, setActiveSection } = useContext(SectionActiveContext);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
