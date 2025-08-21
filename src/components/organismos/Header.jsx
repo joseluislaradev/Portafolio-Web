@@ -5,11 +5,9 @@ import { MenuComputadora } from "../moleculas/MenuComputadora.jsx";
 import { MenuIcon } from "../atomos/MenuIcon.jsx";
 import { ThemeSwitcher } from "../moleculas/ThemeSwitcher.jsx";
 import { Logo } from "../atomos/Logo.jsx";
-import { useSections } from "../../hooks/useSections.js";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { sections, sectionRefs, activeSection } = useSections();
 
   const isMobile = useMediaQuery("(max-width: 896px)"); // Cambia el valor según tu diseño
 
@@ -27,11 +25,7 @@ export function Header() {
 
           {!isMobile && (
             <div className="flex items-center gap-4 animate-slide-in-top relative z-100">
-              <MenuComputadora
-                sections={sections}
-                sectionRefs={sectionRefs}
-                activeSection={activeSection}
-              />
+              <MenuComputadora />
               <ThemeSwitcher />
             </div>
           )}
@@ -50,14 +44,7 @@ export function Header() {
             </div>
           )}
 
-          {isMobile && (
-            <MenuEscondido
-              sections={sections}
-              sectionRefs={sectionRefs}
-              activeSection={activeSection}
-              isMenuOpen={isMenuOpen}
-            />
-          )}
+          {isMobile && <MenuEscondido isMenuOpen={isMenuOpen} />}
         </div>
       </div>
     </header>
