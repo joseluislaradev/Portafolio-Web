@@ -4,6 +4,7 @@ import { PiePagina } from "./components/moleculas/PiePagina.jsx";
 import { Toaster } from "react-hot-toast";
 import { HeaderDetalle } from "./components/organismos/HeaderDetalle.jsx";
 import { lazy, Suspense } from "react";
+import { useSections } from "./hooks/useSections.js";
 
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const ProjectDetailPage = lazy(() => import("./pages/DetallesProyecto.jsx"));
@@ -11,12 +12,17 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
 export function App() {
   const location = useLocation();
+  const { sections, sectionRefs } = useSections();
 
   const isProjectDetailPage = location.pathname.startsWith("/proyectos/");
 
   return (
     <div className="">
-      {isProjectDetailPage ? <HeaderDetalle /> : <Header />}
+      {isProjectDetailPage ? (
+        <HeaderDetalle />
+      ) : (
+        <Header sections={sections} sectionRefs={sectionRefs} />
+      )}
 
       <main className="pt-16">
         <Suspense
@@ -27,7 +33,12 @@ export function App() {
           }
         >
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/"
+              element={
+                <HomePage sections={sections} sectionRefs={sectionRefs} />
+              }
+            />
             <Route
               path="/proyectos/:projectId"
               element={<ProjectDetailPage />}

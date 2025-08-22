@@ -31,18 +31,16 @@ const SECTION_DEFS = [
 ];
 
 export function useSections() {
-  // Crea refs UNA sola vez por id estable
+  // Crea refs UNa sola vez por id estable
   const refsMap = useRef(
     Object.fromEntries(SECTION_DEFS.map((s) => [s.id, { current: null }]))
   ).current;
 
-  // `sections` estable (misma identidad entre renders)
   const sections = useMemo(() => {
     return SECTION_DEFS.map((s) => ({ ...s, ref: refsMap[s.id] }));
   }, [refsMap]);
 
-  // Objeto estable para pasar a otros hooks/props
-  const sectionRefs = refsMap; // identidad estable
+  const sectionRefs = refsMap;
 
   const activeSection = useScrollSpy(sectionRefs);
 

@@ -1,7 +1,7 @@
 import { Transition } from "@headlessui/react";
 import { NavLinks } from "./NavLinks.jsx";
 
-export function MenuEscondido({ isMenuOpen }) {
+export function MenuEscondido({ isMenuOpen, sections, sectionRefs }) {
   return (
     <Transition
       show={isMenuOpen} // La visibilidad se controla con el estado de React
@@ -16,7 +16,7 @@ export function MenuEscondido({ isMenuOpen }) {
     >
       <nav className="menu absolute w-1/2 h-screen top-0 right-0 bg-background-secondary-light dark:bg-background-secondary-dark">
         <ul className="flex bg-background-primary-light dark:bg-background-primary-dark  flex-col items-center justify-center h-full space-y-6 text-lg font-semibold">
-          <NavLinks />
+          <NavLinks sections={sections} sectionRefs={sectionRefs} />
         </ul>
       </nav>
     </Transition>

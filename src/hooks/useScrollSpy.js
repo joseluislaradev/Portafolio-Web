@@ -4,7 +4,7 @@ import { SectionActiveContext } from "../context/sectionActive.jsx"; // Asegúra
 
 // El hook ahora recibe el objeto de refs
 export function useScrollSpy(sectionRefs) {
-  const { activeSection, setActiveSection } = useContext(SectionActiveContext);
+  const { setActiveSection } = useContext(SectionActiveContext);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,7 +36,5 @@ export function useScrollSpy(sectionRefs) {
     return () => {
       elements.forEach((element) => observer.unobserve(element));
     };
-  }, [sectionRefs]); // La dependencia ahora es el objeto de refs
-
-  return activeSection;
+  }, [sectionRefs, setActiveSection]); // La dependencia ahora es el objeto de refs
 }

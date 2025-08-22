@@ -1,10 +1,9 @@
 import { LinkBoton } from "./LinkBoton.jsx";
-import { useSections } from "../../hooks/useSections.js";
-import { memo } from "react";
+import { useContext } from "react";
+import { SectionActiveContext } from "../../context/sectionActive.jsx";
 
-function NavLinksBase() {
-  const { sections, sectionRefs, activeSection } = useSections();
-
+export function NavLinks({ sections, sectionRefs }) {
+  const { activeSection } = useContext(SectionActiveContext);
   return (
     <>
       {sections.map(({ id, label }) => (
@@ -26,5 +25,3 @@ function NavLinksBase() {
     </>
   );
 }
-
-export const NavLinks = memo(NavLinksBase); // 👈 memo para evitar renders si no cambia `sections`
