@@ -1,16 +1,10 @@
-import { useRef, useEffect, useState } from "react";
-import { useScrollSpy } from "./hooks/useScrollSpy";
 import { Header } from "./components/organismos/Header";
-import { Hero } from "./components/organismos/Hero";
-import { Proyectos } from "./components/organismos/Proyectos.jsx";
-import { ExperienciaLaboral } from "./components/organismos/ExperienciaLaboral.jsx";
-import { SobreMi } from "./components/organismos/SobreMi.jsx";
-import { Contacto } from "./components/organismos/Contacto.jsx";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { PiePagina } from "./components/moleculas/PiePagina.jsx";
 import { Toaster } from "react-hot-toast";
 import { HeaderDetalle } from "./components/organismos/HeaderDetalle.jsx";
 import { lazy, Suspense } from "react";
+import { useSections } from "./hooks/useSections.js";
 
 const HomePage = lazy(() => import("./pages/HomePage.jsx"));
 const ProjectDetailPage = lazy(() => import("./pages/DetallesProyecto.jsx"));
@@ -18,65 +12,16 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 
 export function App() {
   const location = useLocation();
-  const [observedElements, setObservedElements] = useState([]);
+  const { sections, sectionRefs } = useSections();
 
   const isProjectDetailPage = location.pathname.startsWith("/proyectos/");
-
-  const sections = [
-    { id: "hero", label: "Inicio", ref: useRef(null), Component: Hero },
-    {
-      id: "proyectos",
-      label: "Proyectos",
-      ref: useRef(null),
-      Component: Proyectos,
-    },
-    {
-      id: "experiencia",
-      label: "Experiencia",
-      ref: useRef(null),
-      Component: ExperienciaLaboral,
-    },
-    {
-      id: "sobreMi",
-      label: "Sobre mí",
-      ref: useRef(null),
-      Component: SobreMi,
-    },
-    {
-      id: "contacto",
-      label: "Contacto",
-      ref: useRef(null),
-      Component: Contacto,
-    },
-  ];
-
-  //Extraemos los refs de cada sección
-  const sectionRefs = sections.reduce((acc, section) => {
-    acc[section.id] = section.ref;
-    return acc;
-  }, {});
-
-  const activeSection =
-    location.pathname === "/" ? useScrollSpy(sectionRefs) : null;
-
-  useEffect(() => {
-    const elements = Object.values(sectionRefs)
-      .map((ref) => ref.current)
-      .filter(Boolean); // Filtra los que sigan siendo null
-
-    setObservedElements(elements);
-  }, [sectionRefs]);
 
   return (
     <div className="">
       {isProjectDetailPage ? (
         <HeaderDetalle />
       ) : (
-        <Header
-          sections={sections}
-          sectionRefs={sectionRefs}
-          activeSection={activeSection}
-        />
+        <Header sections={sections} sectionRefs={sectionRefs} />
       )}
 
       <main className="pt-16">
@@ -87,8 +32,13 @@ export function App() {
             </div>
           }
         >
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<HomePage sections={sections} />} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage sections={sections} sectionRefs={sectionRefs} />
+              }
+            />
             <Route
               path="/proyectos/:projectId"
               element={<ProjectDetailPage />}

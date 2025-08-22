@@ -1,6 +1,9 @@
 import { LinkBoton } from "./LinkBoton.jsx";
+import { useContext } from "react";
+import { SectionActiveContext } from "../../context/sectionActive.jsx";
 
-export function NavLinks({ sections, activeSection, sectionRefs}) {
+export function NavLinks({ sections, sectionRefs }) {
+  const { activeSection } = useContext(SectionActiveContext);
   return (
     <>
       {sections.map(({ id, label }) => (

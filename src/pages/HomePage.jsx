@@ -1,4 +1,7 @@
-export default function HomePage({ sections }) {
+import { useScrollSpy } from "../hooks/useScrollSpy";
+
+export default function HomePage({ sections, sectionRefs }) {
+  useScrollSpy(sectionRefs);
   return (
     <>
       {sections.map(({ id, ref, Component }) => (
