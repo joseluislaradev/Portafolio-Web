@@ -42,7 +42,5 @@ export function useSections() {
 
   const sectionRefs = refsMap;
 
-  const activeSection = useScrollSpy(sectionRefs);
-
-  return { sections, activeSection, sectionRefs };
+  return { sections, sectionRefs };
 }
