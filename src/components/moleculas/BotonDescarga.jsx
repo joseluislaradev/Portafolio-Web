@@ -21,7 +21,7 @@ export function BotonDescarga({
   );
 
   const handleDownload = () => {
-    toast.success("Descarga iniciada.", {
+    toast.success("Descarga iniciada...", {
       duration: 4000,
       style: {
         background: "var(--color-accent-primary-light)",
